@@ -102,7 +102,7 @@ export const rootMetadata: Metadata = {
   // Add your verification tokens after registering on each platform
   // See README.md → Platform Registration for instructions
   verification: {
-    google: "<GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN>", // TODO
+    google: "MLlqy7RymXYeSE0a9ZQh4wXjlHwUhnzWm_7MxtAGCr4", // TODO
     // yandex: "<YANDEX_WEBMASTER_TOKEN>",                  // TODO
     // bing is handled via BingSiteAuth.xml in /public/     // TODO
     // other: { "baidu-site-verification": "<TOKEN>" },     // TODO if targeting China

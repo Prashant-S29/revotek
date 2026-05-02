@@ -9,7 +9,7 @@ export const baseInfo = {
   legalName: "Revotek Elevators",
 
   title:
-    "Professional elevator installation, maintenance, repair, and modernization services in India",
+    "Revotek Elevators - Professional elevator installation, maintenance, repair, and modernization services in India",
   fullTitle:
     "Revotek Elevators - Professional elevator installation, maintenance, repair, and modernization services in India",
   description:

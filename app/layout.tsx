@@ -1,70 +1,44 @@
-import type { ReactNode } from "react";
-import type { Metadata, Viewport } from "next";
+import "@/styles/globals.css";
+
+// seo configs
 import { rootMetadata, rootStructuredData } from "@/seo-configs/metadata";
 import { baseInfo } from "@/seo-configs/baseInfo";
-import "@/styles/globals.css";
-import { geist } from "@/lib/fonts";
-import { Figtree } from "next/font/google";
+
+// types
+import type { ReactNode } from "react";
+import type { Metadata, Viewport } from "next";
+
+// fonts
+import { figtree } from "@/lib/fonts";
+
+// utils
 import { cn } from "@/lib/utils";
+
+// components
 import { Header, Footer } from "@/components/layout";
 
-const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
-
-// ─────────────────────────────────────────────────────────────────────────────
-// METADATA EXPORT
-// Next.js reads this and merges it with page-level metadata
-// All pages inherit these values unless they override them
-// ─────────────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = rootMetadata;
 
-// ─────────────────────────────────────────────────────────────────────────────
-// VIEWPORT EXPORT
-// Separated from metadata per Next.js 14+ requirement
-// themeColor here MUST match theme_color in manifest.ts
-// ─────────────────────────────────────────────────────────────────────────────
 export const viewport: Viewport = {
-  // Prevents font scaling on orientation change — avoids layout shifts
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5, // Allow zoom for accessibility — don't set to 1
-  userScalable: true, // Never disable — accessibility requirement
-
-  // TODO: update to match your brand's primary color
-  // This colors the browser chrome on Android Chrome
+  maximumScale: 5,
+  userScalable: true,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#0b92c3" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b92c3" },
   ],
-
-  // Ensures content fills the safe area on notched devices (iPhone X+)
   viewportFit: "cover",
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// ROOT LAYOUT
-// ─────────────────────────────────────────────────────────────────────────────
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang={baseInfo.language}
       dir="ltr"
-      // Add font variable classes here once you configure next/font above
-      // className={`${inter.variable} antialiased`}
-      className={cn(
-        "antialiased",
-        geist.variable,
-        "font-sans",
-        figtree.variable,
-      )}
-      // Prevents theme flash — set to your default theme
-      // If using a theme system, manage this via a script to avoid FOUC
-      // suppressHydrationWarning
+      className={cn("antialiased", "font-sans", figtree.variable)}
     >
       <head>
-        {/* ── Structured Data ──────────────────────────────────────────────
-            Injected directly — not via next/head — for RSC compatibility
-            This fires on every page as the global identity layer
-            Page-level schemas are added inside each page component        */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,47 +78,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
 
       <body>
-        {/* ── Skip to Content ──────────────────────────────────────────────
-            Accessibility requirement — WCAG 2.1 Level A
-            Also signals semantic structure to crawlers
-            Visually hidden until focused via keyboard navigation         */}
         <a
           href="#main-content"
-          className={[
-            "sr-only",
-            "focus:not-sr-only",
-            "focus:fixed",
-            "focus:left-4",
-            "focus:top-4",
-            "focus:z-9999",
-            "focus:rounded-md",
-            "focus:bg-white",
-            "focus:px-4",
-            "focus:py-2",
-            "focus:text-black",
-            "focus:shadow-lg",
-            "focus:outline-none",
-            "focus:ring-2",
-            "focus:ring-black",
-          ].join(" ")}
+          className="
+            sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-9999 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-black"
         >
           Skip to main content
         </a>
 
         <Header />
-
-        {/* ── Main Content ─────────────────────────────────────────────────
-            id="main-content" is the skip-link target
-            role="main" is redundant on <main> but kept for older tools  */}
-        <main id="main-content">{children}</main>
-
+        <main id="main-content">
+          {children}
+          <div className="w-full min-h-screen" />
+        </main>
         <Footer />
-
-        {/* ── Footer ───────────────────────────────────────────────────────
-            TODO: add your <Footer /> component here
-            Use <footer> semantic element
-            Include: nav links, contact info, social links, legal links
-            Footer links contribute to internal linking structure         */}
       </body>
     </html>
   );

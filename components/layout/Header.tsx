@@ -1,10 +1,17 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
+// hooks
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { HugeiconsIcon } from "@hugeicons/react";
+
+// icons
 import { Menu09Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+
+// components
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -21,8 +28,11 @@ const data = {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Our Services", href: "/services" },
-    { label: "Contact Us", href: "/contact" },
   ],
+  contactCTA: {
+    label: "Contact Us",
+    href: "/contact",
+  },
 };
 
 export const Header: React.FC = () => {
@@ -48,10 +58,10 @@ export const Header: React.FC = () => {
 
   return (
     <header
-      className={[
-        "w-full top-0 fixed z-50 flex bg-white justify-between px-6 md:px-20 lg:px-30 xl:px-50 py-4 items-center transition-[background-color,border-color] duration-300",
-        scrolled ? " border-b border-gray-200" : " border-b border-transparent",
-      ].join(" ")}
+      className={`
+        w-full top-0 fixed z-50 flex justify-between px-6 md:px-20 lg:px-30 xl:px-50 py-4 items-center transition-[background-color,border-color] duration-300
+        ${scrolled ? "border-b border-gray-200  bg-white" : "border-b border-transparent  bg-transparent"}
+      `}
       role="banner"
     >
       <Link href="/" aria-label="Go to homepage">
@@ -66,13 +76,14 @@ export const Header: React.FC = () => {
       </Link>
 
       <nav aria-label="Primary navigation" className="hidden md:block">
-        <ul className="flex gap-8 list-none m-0 p-0" role="list">
+        <ul className="flex gap-8 items-center list-none m-0 p-0" role="list">
           {data.nav.map((item) => {
             const isActive = pathname === item.href;
             return (
               <li key={item.href}>
                 <Button
                   variant="ghost"
+                  size="lg"
                   aria-current={isActive ? "page" : undefined}
                   className={
                     isActive
@@ -85,6 +96,16 @@ export const Header: React.FC = () => {
               </li>
             );
           })}
+
+          <li>
+            <Button
+              size="lg"
+              nativeButton={false}
+              render={
+                <Link href={data.contactCTA.href}>{data.contactCTA.label}</Link>
+              }
+            />
+          </li>
         </ul>
       </nav>
 
@@ -125,10 +146,11 @@ export const Header: React.FC = () => {
                       render={
                         <Button
                           variant="ghost"
-                          className={[
-                            "w-full justify-start text-base",
-                            isActive ? "text-brand-primary font-semibold" : "",
-                          ].join(" ")}
+                          size="lg"
+                          className={`
+                            w-full justify-start text-base
+                            ${isActive ? "text-brand-primary font-semibold" : ""}
+                          `}
                           aria-current={isActive ? "page" : undefined}
                           nativeButton={false}
                           render={<Link href={item.href}>{item.label}</Link>}
@@ -138,6 +160,17 @@ export const Header: React.FC = () => {
                   </li>
                 );
               })}
+              <li>
+                <Button
+                  size="lg"
+                  nativeButton={false}
+                  render={
+                    <Link href={data.contactCTA.href}>
+                      {data.contactCTA.label}
+                    </Link>
+                  }
+                />
+              </li>
             </ul>
           </nav>
         </SheetContent>

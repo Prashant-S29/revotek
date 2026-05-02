@@ -1,7 +1,3 @@
-import { Geist } from "next/font/google";
+import { Figtree } from "next/font/google";
 
-export const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-});
+export const figtree = Figtree({ subsets: ["latin"], variable: "--font-sans" });
