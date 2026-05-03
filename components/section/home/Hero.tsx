@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
     <section
       id="home-hero"
       aria-labelledby="hero-heading"
-      className="relative bg-gray-100 w-full flex flex-col min-h-screen justify-center"
+      className="relative w-full flex flex-col min-h-screen justify-center"
     >
       <Image
         src={hero.assets_bannerImage.src}

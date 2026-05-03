@@ -1,0 +1,90 @@
+{
+  "aboutUsPageContent": {
+    "hero": {
+      "badgeTitle": "About Revotek Elevators",
+      "heading": "Elevator Experts You Can Trust in Gujarat",
+      "description": "Revotek Elevators is a professional elevator service company based in Gujarat, Gujarat. We specialize in elevator installation, maintenance, repair, and modernization for residential, commercial, and industrial buildings across India.",
+      "assets_bannerImage": {
+        "src": "/assets/about-main.webp",
+        "alt": "Revotek Elevators team at work in Gujarat"
+      }
+    },
+    "whoWeAre": {
+      "heading": "A Dedicated Elevator Company Built on Safety and Reliability",
+      "paragraphs": [
+        "Revotek Elevators is an Ahmedabad-based elevator solutions company committed to delivering safe, efficient, and long-lasting vertical mobility systems. We work with residential societies, commercial complexes, hospitals, industrial facilities, and high-rise buildings providing tailored elevator solutions that match the unique demands of each project.",
+        "Our team of trained and certified technicians brings hands-on expertise to every installation, maintenance visit, and repair job. We work with trusted, OEM-grade components and follow industry-standard safety protocols to ensure every elevator we service performs at its best day after day.",
+        "From the first site inspection to long-term AMC support, Revotek Elevators is with you at every stage of your elevator's lifecycle. We believe reliable vertical mobility is not a luxury it is a necessity, and we treat every project with that responsibility in mind."
+      ],
+      "assets_bannerImage": {
+        "src": "/assets/aboutbanner2.webp",
+        "alt": "Revotek Elevators technician servicing an elevator in Ahmedabad"
+      }
+    },
+    "missionVision": {
+      "badgeTitle": "Mission & Vision",
+      "mission": {
+        "heading": "Our Mission",
+        "description": "To provide safe, efficient, and reliable elevator solutions that enhance the daily lives of people across residential, commercial, and industrial spaces. We are committed to delivering quality workmanship, responsive service, and long-term support for every elevator system we install and maintain."
+      },
+      "vision": {
+        "heading": "Our Vision",
+        "description": "To become the most trusted elevator service company in Gujarat — known for technical excellence, safety standards, and a customer-first approach that sets the benchmark for vertical mobility solutions across India."
+      }
+    },
+    "whyChooseUs": {
+      "badgeTitle": "Why Choose Us",
+      "heading": "What Sets Revotek Elevators Apart",
+      "description": "We combine technical expertise, certified components, and a customer-first approach to deliver elevator solutions that last. Here is what you can expect when you work with us.",
+      "items": [
+        {
+          "title": "Certified & Trained Technicians",
+          "description": "Every technician on our team is trained to handle elevator installation, maintenance, and repair with precision. We follow strict safety protocols on every job, big or small."
+        },
+        {
+          "title": "OEM-Grade Spare Parts",
+          "description": "We use only trusted, OEM-compatible components across all our services. Quality parts mean fewer breakdowns, longer system life, and better long-term value for our clients."
+        },
+        {
+          "title": "End-to-End Lifecycle Support",
+          "description": "From initial site inspection and installation to ongoing AMC support and modernization, we stay with you at every stage of your elevator's lifecycle."
+        },
+        {
+          "title": "Fast Response in Ahmedabad",
+          "description": "Being based in Ahmedabad means we can respond quickly to service requests, breakdowns, and emergencies across the city and surrounding areas in Gujarat."
+        },
+        {
+          "title": "Safety-First on Every Project",
+          "description": "Safety is not a checklist item for us — it is the foundation of everything we do. Every installation and maintenance visit follows industry-standard safety practices without compromise."
+        },
+        {
+          "title": "Customized Solutions",
+          "description": "No two buildings are the same. We assess each project individually and recommend elevator solutions tailored to the specific space, usage, and budget requirements."
+        }
+      ]
+    },
+    "coreValues": {
+      "badgeTitle": "Our Core Values",
+      "heading": "The Principles Behind Every Elevator We Service",
+      "description": "Our values are not statements on a wall — they shape how we work, how we communicate, and how we deliver every project.",
+      "items": [
+        {
+          "title": "Safety",
+          "description": "Every decision we make starts with safety. From the components we choose to the protocols we follow, we never compromise on the wellbeing of the people who use the elevators we service."
+        },
+        {
+          "title": "Reliability",
+          "description": "Our clients depend on us to keep their elevators running. We show up, we follow through, and we deliver work that holds up over time — not just on day one."
+        },
+        {
+          "title": "Quality",
+          "description": "We use trusted components, proven methods, and careful workmanship on every job. Quality is not an upgrade it is the standard we hold ourselves to on every project."
+        },
+        {
+          "title": "Responsiveness",
+          "description": "When something goes wrong with an elevator, time matters. We prioritize fast response, clear communication, and quick resolution so our clients are never left waiting."
+        }
+      ]
+    }
+  }
+}

@@ -87,10 +87,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
 
         <Header />
-        <main id="main-content">
-          {children}
-          <div className="w-full min-h-screen" />
-        </main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>
