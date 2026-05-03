@@ -30,7 +30,14 @@ export const WhyChooseUs: React.FC = () => {
             key={index}
             className="bg-white p-8 flex flex-col gap-4 group  transition-colors duration-300"
           >
-            <div className="size-16 rounded-lg bg-brand-primary" />
+            <div
+              className="w-12 h-12 rounded-xl bg-brand-primary/15 flex items-center justify-center"
+              aria-hidden="true"
+            >
+              <span className="text-brand-primary text-xl font-bold">
+                {index + 1}
+              </span>
+            </div>
             <h3 className="text-xl font-semibold text-primary">{item.title}</h3>
 
             <p className="text-sm text-muted-foreground leading-relaxed">
