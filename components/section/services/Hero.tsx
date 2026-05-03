@@ -1,12 +1,13 @@
-import { aboutUsPageContent } from "@/content/about.json";
+import { BreadcrumbNav } from "@/components/common";
+import { servicesPageContent } from "@/content/services.json";
 
 export const Hero: React.FC = () => {
-  const { hero } = aboutUsPageContent;
+  const { hero } = servicesPageContent;
 
   return (
     <section
-      id="about-hero"
-      aria-labelledby="about-hero-heading"
+      id="services-hero"
+      aria-labelledby="services-hero-heading"
       className="relative w-full bg-brand-primary/20 overflow-hidden"
     >
       <div
@@ -20,6 +21,8 @@ export const Hero: React.FC = () => {
       />
 
       <div className="relative z-10 px-8  md:px-16 lg:px-24 xl:px-32 pt-50 pb-25 flex flex-col items-center text-center">
+        <BreadcrumbNav items={[{ label: "Services", href: "/services" }]} />
+
         <h1
           id="services-hero-heading"
           className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mt-6 max-w-4xl"

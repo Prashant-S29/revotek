@@ -11,7 +11,25 @@ export const ContactBanner: React.FC = () => {
       aria-labelledby="contact-banner-heading"
       className="px-50 py-25"
     >
-      <div className="w-full bg-brand-primary/60 rounded-4xl px-20 py-16 flex-col flex  items-center ">
+      <div className="w-full bg-brand-primary/20 relative overflow-hidden rounded-4xl px-20 py-16 flex-col flex  items-center ">
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-primary/20 z-0"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-brand-primary/20 z-0"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-primary/20 z-0"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-brand-primary/20 z-0"
+        />
         <h2
           id="contact-banner-heading"
           className="text-5xl max-w-2xl text-center mt-5 font-semibold"

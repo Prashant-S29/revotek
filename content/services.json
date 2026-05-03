@@ -1,0 +1,558 @@
+{
+  "servicesPageContent": {
+    "hero": {
+      "badgeTitle": "Our Services",
+      "heading": "Complete Elevator Services in Gujarat",
+      "description": "Revotek Elevators offers end-to-end elevator services for residential, commercial, and industrial buildings. From new installations to ongoing maintenance, repair, modernization, and spare parts supply — we handle every aspect of your elevator's lifecycle."
+    },
+    "servicesGrid": {
+      "heading": "Everything Your Elevator Needs, Under One Roof",
+      "description": "From first installation to long-term maintenance, we cover every stage of your elevator's lifecycle with the same level of care and technical precision."
+    },
+    "whyRevotek": {
+      "badgeTitle": "Why Revotek",
+      "heading": "A Service Partner You Can Count On",
+      "description": "Every service we offer is backed by trained technicians, OEM-grade components, and a commitment to safety and long-term performance.",
+      "items": [
+        {
+          "title": "Trained Technicians",
+          "description": "Our team is certified and experienced across all major elevator brands and systems."
+        },
+        {
+          "title": "Safety Compliant",
+          "description": "Every job follows industry-standard safety protocols without exception."
+        },
+        {
+          "title": "OEM-Grade Parts",
+          "description": "We use only trusted components to ensure reliability and reduce downtime."
+        },
+        {
+          "title": "Ahmedabad Based",
+          "description": "Local presence means faster response times and on-ground support when you need it."
+        }
+      ]
+    },
+    "ctaContact": {
+      "heading": "Need Elevator Services in Ahmedabad or Gujarat?",
+      "description": "Contact Revotek Elevators today to discuss your requirements. Our team is ready to provide safe, efficient, and long-lasting elevator solutions tailored to your building.",
+      "cta": {
+        "label": "Contact Us",
+        "link": "/contact",
+        "variant": "brand"
+      }
+    },
+    "services": [
+      {
+        "slug": "elevator-installation",
+        "title": "Elevator Installation",
+        "shortDescription": "Professional installation of passenger, goods, home, and commercial elevators with complete setup, testing, and commissioning.",
+        "metaTitle": "Elevator Installation in Ahmedabad | Revotek Elevators",
+        "metaDescription": "Professional elevator installation services in Ahmedabad and Gujarat for residential, commercial, and industrial buildings. Certified technicians, OEM components, full commissioning.",
+        "keywords": [
+          "elevator installation Ahmedabad",
+          "lift installation Ahmedabad",
+          "elevator installation Gujarat",
+          "residential elevator installation Ahmedabad",
+          "commercial elevator installation Gujarat"
+        ],
+        "hero": {
+          "badgeTitle": "Elevator Installation",
+          "heading": "Professional Elevator Installation in Gujarat",
+          "description": "Revotek Elevators provides complete elevator installation services for residential buildings, commercial complexes, hospitals, and industrial facilities across Ahmedabad and Gujarat. We handle everything from site inspection and custom design to installation, testing, and final commissioning."
+        },
+        "overview": "Installing an elevator is a long-term investment in your building's safety and usability. At Revotek Elevators, we approach every installation project in Ahmedabad with detailed planning, certified components, and strict adherence to IS and EN elevator safety standards. Whether you need a passenger lift for a residential building or a heavy-duty goods elevator for an industrial facility, our team delivers a system built to perform reliably for years.",
+        "process": [
+          {
+            "title": "Site Inspection & Assessment",
+            "description": "Detailed structural evaluation of your building in Ahmedabad to determine shaft space, load capacity, and the right elevator type for your specific requirements."
+          },
+          {
+            "title": "Customized Design & Planning",
+            "description": "Tailored layout, cabin design, and control system selection based on your building's architecture, usage patterns, and budget."
+          },
+          {
+            "title": "Equipment Procurement & Quality Check",
+            "description": "Sourcing OEM-certified elevator components with multi-stage quality inspection before any equipment reaches your site."
+          },
+          {
+            "title": "Mechanical & Electrical Installation",
+            "description": "Precise installation by our trained technicians following IS and EN elevator safety standards at every stage."
+          },
+          {
+            "title": "Testing, Validation & Commissioning",
+            "description": "Rigorous safety and performance testing across all systems before final sign-off and handover."
+          },
+          {
+            "title": "Handover, Documentation & Training",
+            "description": "Complete certification, operating manuals, safety guidelines, and hands-on training for your building staff."
+          }
+        ],
+        "features": [
+          "MRL, gearless, hydraulic, and traction lift options for every building type",
+          "Energy-efficient motors and advanced VVVF control systems",
+          "Smooth ride quality with premium cabin interior options",
+          "Full installation as per IS and EN industry safety standards",
+          "Compatible with residential, commercial, hospital, and industrial use"
+        ],
+        "benefits": [
+          "High-performance, long-lasting elevator built for your specific building",
+          "Customized installation plan tailored to space and usage requirements",
+          "Low maintenance design with superior operational efficiency",
+          "End-to-end support from site visit to post-installation service"
+        ],
+        "faqs": [
+          {
+            "question": "How long does elevator installation take in Ahmedabad?",
+            "answer": "Installation timelines depend on the elevator type and building requirements. A standard residential elevator installation in Ahmedabad typically takes 4 to 8 weeks from site inspection to commissioning."
+          },
+          {
+            "question": "What types of elevators do you install?",
+            "answer": "We install MRL (Machine Room Less), gearless traction, hydraulic, and conventional traction elevators for residential buildings, commercial complexes, hospitals, and industrial facilities across Ahmedabad and Gujarat."
+          },
+          {
+            "question": "Do you handle permits and safety certifications for elevator installation?",
+            "answer": "Yes. We assist with all necessary documentation, safety certifications, and compliance requirements as part of our complete elevator installation service in Ahmedabad."
+          },
+          {
+            "question": "Can you install an elevator in an existing building?",
+            "answer": "Yes. We regularly install elevators in existing buildings across Ahmedabad, including retrofitting lifts into older residential and commercial structures with minimal structural disruption."
+          }
+        ],
+        "assets_bannerImage": {
+          "src": "/assets/services/elevator-installation.webp",
+          "alt": "Elevator installation in progress at a residential building in Ahmedabad by Revotek Elevators"
+        },
+        "cta": {
+          "label": "Request a Site Inspection",
+          "href": "/contact"
+        }
+      },
+      {
+        "slug": "elevator-maintenance",
+        "title": "Elevator Maintenance",
+        "shortDescription": "Regular maintenance services to ensure smooth operation, reduce breakdowns, and extend the life of your elevator systems.",
+        "metaTitle": "Elevator Maintenance in Ahmedabad | Revotek Elevators",
+        "metaDescription": "Preventive elevator maintenance services in Ahmedabad and Gujarat. Trained technicians, genuine parts, monthly inspections, and 24/7 breakdown support for all elevator brands.",
+        "keywords": [
+          "elevator maintenance Ahmedabad",
+          "lift maintenance Ahmedabad",
+          "elevator servicing Gujarat",
+          "preventive elevator maintenance Ahmedabad",
+          "elevator maintenance company Ahmedabad"
+        ],
+        "hero": {
+          "badgeTitle": "Elevator Maintenance",
+          "heading": "Preventive Elevator Maintenance Services in Ahmedabad",
+          "description": "Revotek Elevators provides scheduled preventive maintenance for all elevator types across Ahmedabad and Gujarat. Our trained technicians use genuine parts and follow detailed safety checklists to keep your elevator running smoothly and safely — every month."
+        },
+        "overview": "A well-maintained elevator is a safe elevator. Revotek's preventive maintenance service in Ahmedabad is designed to catch problems before they become breakdowns, extend the operational life of your system, and keep your building compliant with elevator safety standards. We service all major elevator brands and models, using only genuine, OEM-compatible spare parts on every visit.",
+        "process": [
+          {
+            "title": "Routine Inspection & Performance Testing",
+            "description": "Monthly checks of all mechanical and electrical components to identify wear, misalignment, or performance degradation early."
+          },
+          {
+            "title": "Lubrication & Mechanical Adjustment",
+            "description": "Proper lubrication of all moving parts and precision tuning to ensure smooth, quiet elevator operation."
+          },
+          {
+            "title": "Control Panel & Sensor Testing",
+            "description": "Verification of control systems, motor performance, safety sensors, and emergency devices."
+          },
+          {
+            "title": "Door Mechanism & Brake Inspection",
+            "description": "Ensuring smooth door operation and reliable braking systems — two of the most critical safety components."
+          },
+          {
+            "title": "Pit, Shaft & Car Top Cleaning",
+            "description": "Thorough cleaning of elevator pit, shaft, and car top to prevent dust accumulation that affects performance and safety."
+          },
+          {
+            "title": "Service Report & Recommendations",
+            "description": "Transparent written report after every visit with findings, work completed, and recommendations for upcoming maintenance needs."
+          }
+        ],
+        "features": [
+          "Scheduled preventive maintenance plan with monthly visits",
+          "Detailed safety and performance inspections on every visit",
+          "Genuine OEM-compatible spare parts used exclusively",
+          "Service coverage across all major elevator brands",
+          "24/7 breakdown and emergency support"
+        ],
+        "benefits": [
+          "Significantly reduced breakdown frequency and unexpected downtime",
+          "Extended operational lifespan of your elevator system",
+          "Safe, smooth operation for all building occupants",
+          "Transparent service reports after every maintenance visit"
+        ],
+        "faqs": [
+          {
+            "question": "How often should an elevator be serviced in Ahmedabad?",
+            "answer": "Elevators should be serviced at least once a month. Regular monthly maintenance is the most effective way to prevent breakdowns, maintain safety compliance, and extend your elevator's lifespan."
+          },
+          {
+            "question": "Do you service all elevator brands?",
+            "answer": "Yes. Our technicians are trained to service all major elevator brands including OTIS, KONE, Johnson, Schindler, Mitsubishi, and others across Ahmedabad and Gujarat."
+          },
+          {
+            "question": "What is the difference between preventive and corrective maintenance?",
+            "answer": "Preventive maintenance involves scheduled inspections and servicing to prevent issues before they occur. Corrective maintenance is reactive — fixing a problem after it has already caused a breakdown. Our maintenance service focuses on prevention to minimize downtime."
+          },
+          {
+            "question": "Do you provide emergency breakdown support?",
+            "answer": "Yes. We provide 24/7 breakdown support for all our maintenance clients in Ahmedabad and the surrounding areas of Gujarat."
+          }
+        ],
+        "assets_bannerImage": {
+          "src": "/assets/services/elevator-maintenance.webp",
+          "alt": "Revotek Elevators technician performing preventive maintenance on an elevator in Ahmedabad"
+        },
+        "cta": {
+          "label": "Schedule a Maintenance Visit",
+          "href": "/contact"
+        }
+      },
+      {
+        "slug": "elevator-repair",
+        "title": "Elevator Repair",
+        "shortDescription": "Fast and reliable repair services for all types of elevators with expert diagnostics and quick issue resolution.",
+        "metaTitle": "Elevator Repair in Ahmedabad | Revotek Elevators",
+        "metaDescription": "Fast elevator repair services in Ahmedabad and Gujarat for all brands and models. Expert fault diagnosis, genuine spare parts, quick turnaround, and safety-verified repairs.",
+        "keywords": [
+          "elevator repair Ahmedabad",
+          "lift repair Ahmedabad",
+          "elevator breakdown repair Gujarat",
+          "elevator technician Ahmedabad",
+          "lift repair service Ahmedabad"
+        ],
+        "hero": {
+          "badgeTitle": "Elevator Repair",
+          "heading": "Fast & Reliable Elevator Repair Services in Ahmedabad",
+          "description": "When your elevator breaks down, every hour matters. Revotek Elevators provides fast, accurate repair services for all elevator brands and models across Ahmedabad and Gujarat. Our trained technicians diagnose the root cause quickly and restore your lift to safe working condition with minimal downtime."
+        },
+        "overview": "Elevator breakdowns are disruptive and can create serious safety risks if not addressed promptly. Revotek's repair service in Ahmedabad covers everything from minor faults to complete system failures across all major elevator brands. We use advanced diagnostic tools to identify the root cause accurately, then repair or replace only what is necessary — keeping costs fair and turnaround fast.",
+        "process": [
+          {
+            "title": "Fault Diagnosis & Technical Analysis",
+            "description": "Identifying the root cause of the breakdown using advanced diagnostic tools and hands-on inspection by our trained technicians."
+          },
+          {
+            "title": "Repair or Replacement of Faulty Components",
+            "description": "Addressing issues in motors, controllers, door systems, sensors, or safety devices with genuine OEM-compatible parts."
+          },
+          {
+            "title": "System Calibration & Software Adjustment",
+            "description": "Fine-tuning control systems and software parameters for smooth, reliable elevator functioning after repair."
+          },
+          {
+            "title": "Safety Inspection After Repair",
+            "description": "Full safety compliance check after every repair to confirm the elevator meets all operational and safety standards before use."
+          },
+          {
+            "title": "Temporary Safety Measures & Downtime Control",
+            "description": "Ensuring passenger safety during repair by isolating faulty systems, securing the elevator, and minimizing operational disruption until full restoration is completed."
+          },
+          {
+            "title": "Final Testing & Client Verification",
+            "description": "Performance testing in the client's presence with a full walkthrough of the repair completed and any recommendations."
+          }
+        ],
+        "features": [
+          "Repair coverage for all major elevator brands including OTIS, KONE, Schindler, and more",
+          "Quick emergency response for breakdown situations in Ahmedabad",
+          "Genuine OEM-compatible spare parts with warranty",
+          "Advanced diagnostic tools for accurate fault identification",
+          "Safety inspection completed after every repair job"
+        ],
+        "benefits": [
+          "Faster elevator recovery with minimal disruption to building operations",
+          "Accurate root cause diagnosis — no unnecessary part replacements",
+          "Improved long-term performance stability after repair",
+          "Cost-effective repairs backed by genuine warranted components"
+        ],
+        "faqs": [
+          {
+            "question": "How quickly can you respond to an elevator breakdown in Ahmedabad?",
+            "answer": "We prioritize breakdown calls and aim to respond as quickly as possible for clients in Ahmedabad. Response times depend on location and technician availability, but we treat all breakdowns as urgent."
+          },
+          {
+            "question": "Do you repair elevators from all brands?",
+            "answer": "Yes. We repair elevators from all major brands including OTIS, KONE, Johnson, Schindler, Mitsubishi, and others. Our technicians are trained across multiple systems and brands."
+          },
+          {
+            "question": "Will you replace parts unnecessarily to increase the bill?",
+            "answer": "No. Our approach is to diagnose accurately and replace only what is genuinely faulty. We explain every repair clearly before proceeding and use genuine parts with warranty."
+          },
+          {
+            "question": "Is the elevator safe to use after repair?",
+            "answer": "Yes. Every repair job is followed by a full safety inspection and performance test before we hand back the elevator. We do not sign off on a repair until the elevator meets all safety standards."
+          }
+        ],
+        "assets_bannerImage": {
+          "src": "/assets/services/elevator-repair.webp",
+          "alt": "Revotek Elevators technician repairing elevator components in Ahmedabad"
+        },
+        "cta": {
+          "label": "Report a Breakdown",
+          "href": "/contact"
+        }
+      },
+      {
+        "slug": "elevator-modernization",
+        "title": "Elevator Modernization",
+        "shortDescription": "Upgrade outdated elevators with modern technology, improved safety features, and energy-efficient systems.",
+        "metaTitle": "Elevator Modernization in Ahmedabad | Revotek Elevators",
+        "metaDescription": "Elevator modernization services in Ahmedabad and Gujarat. Upgrade old elevators with VVVF drives, new control panels, energy-efficient motors, and improved safety systems.",
+        "keywords": [
+          "elevator modernization Ahmedabad",
+          "lift upgrade Ahmedabad",
+          "elevator renovation Gujarat",
+          "VVVF elevator upgrade Ahmedabad",
+          "elevator retrofit Ahmedabad"
+        ],
+        "hero": {
+          "badgeTitle": "Elevator Modernization",
+          "heading": "Elevator Modernization & Upgrade Services in Ahmedabad",
+          "description": "If your elevator is ageing, inefficient, or failing frequently, modernization is a smarter investment than full replacement. Revotek Elevators upgrades existing elevator systems across Ahmedabad and Gujarat with the latest technology, improved safety features, and energy-efficient components — at a fraction of the cost of a new installation."
+        },
+        "overview": "Older elevator systems in Ahmedabad buildings often suffer from frequent breakdowns, high energy consumption, outdated controls, and poor ride quality. Revotek's modernization service addresses all of these issues by replacing critical components while retaining the existing shaft and structure. The result is a system that performs like new, complies with current safety standards, and costs significantly less than a complete replacement.",
+        "process": [
+          {
+            "title": "Existing System Inspection & Evaluation",
+            "description": "Thorough assessment of your current elevator to identify outdated components, performance gaps, and safety compliance issues."
+          },
+          {
+            "title": "Modernization Plan & Component Selection",
+            "description": "Customized upgrade plan with component recommendations tailored to your building's requirements and budget."
+          },
+          {
+            "title": "Replacement of Critical Components",
+            "description": "Installation of new control units, motors, VVVF drives, door systems, indicators, and safety devices."
+          },
+          {
+            "title": "Energy-Efficient Equipment Installation",
+            "description": "Modern energy-saving motors and drives that significantly reduce your elevator's power consumption."
+          },
+          {
+            "title": "Testing, Commissioning & Certification",
+            "description": "Full performance and safety testing after modernization to ensure compliance with current elevator standards."
+          },
+          {
+            "title": "Handover & User Training",
+            "description": "Complete documentation of upgrades performed, new component details, and user guidance on new features."
+          }
+        ],
+        "features": [
+          "VVVF drives and energy-efficient motor upgrades",
+          "Modern cabin interior redesign options",
+          "Smart control panels, floor indicators, and digital displays",
+          "Enhanced safety systems including door sensors and emergency devices",
+          "Compatible with all existing elevator shaft structures"
+        ],
+        "benefits": [
+          "Significantly better aesthetics and improved passenger experience",
+          "Reduced power consumption with modern energy-efficient technology",
+          "Higher system reliability with fewer breakdowns",
+          "Full compliance with current elevator safety standards",
+          "Cost-effective alternative to full elevator replacement"
+        ],
+        "faqs": [
+          {
+            "question": "How do I know if my elevator needs modernization?",
+            "answer": "Common signs include frequent breakdowns, slow or jerky ride, outdated controls, high energy bills, poor aesthetics, or non-compliance with current safety standards. If your elevator is more than 10 years old, a modernization assessment is recommended."
+          },
+          {
+            "question": "Is modernization cheaper than installing a new elevator?",
+            "answer": "Yes. Elevator modernization in Ahmedabad is typically significantly more cost-effective than full replacement because the existing shaft and structure are retained. Only the outdated components are replaced."
+          },
+          {
+            "question": "How long does elevator modernization take?",
+            "answer": "The duration depends on the scope of upgrades. A standard modernization project in Ahmedabad typically takes 1 to 3 weeks from start to commissioning."
+          },
+          {
+            "question": "Will modernization bring my elevator up to current safety standards?",
+            "answer": "Yes. All modernization work carried out by Revotek Elevators includes a full safety inspection and certification to ensure compliance with current elevator safety standards."
+          }
+        ],
+        "assets_bannerImage": {
+          "src": "/assets/services/elevator-modernization.webp",
+          "alt": "Modernized elevator with new control panel and cabin interior upgraded by Revotek Elevators in Ahmedabad"
+        },
+        "cta": {
+          "label": "Get a Modernization Assessment",
+          "href": "/contact"
+        }
+      },
+      {
+        "slug": "amc",
+        "title": "Annual Maintenance Contract (AMC)",
+        "shortDescription": "Flexible AMC plans with scheduled servicing, priority support, and cost-effective long-term maintenance solutions.",
+        "metaTitle": "Elevator AMC in Ahmedabad | Annual Maintenance Contract | Revotek Elevators",
+        "metaDescription": "Elevator Annual Maintenance Contract (AMC) in Ahmedabad and Gujarat. Comprehensive and non-comprehensive plans with scheduled servicing, priority response, and genuine parts.",
+        "keywords": [
+          "elevator AMC Ahmedabad",
+          "elevator annual maintenance contract Ahmedabad",
+          "lift AMC Gujarat",
+          "elevator maintenance contract Ahmedabad",
+          "elevator service contract Ahmedabad"
+        ],
+        "hero": {
+          "badgeTitle": "Annual Maintenance Contract",
+          "heading": "Elevator AMC Plans in Gujarat. Comprehensive & Non-Comprehensive",
+          "description": "Revotek Elevators offers Annual Maintenance Contract (AMC) plans designed to keep your elevator performing at its best year-round. Choose from comprehensive or non-comprehensive plans based on your requirements and budget. AMC clients in Ahmedabad get priority service, scheduled maintenance, and peace of mind."
+        },
+        "overview": "An Annual Maintenance Contract with Revotek Elevators in Ahmedabad is the most cost-effective way to ensure your elevator receives consistent, professional care throughout the year. Rather than calling for service only when something breaks, an AMC gives you scheduled preventive maintenance, priority breakdown response, and transparent reporting — all under a single annual plan.",
+        "process": [
+          {
+            "title": "Initial System Health Check",
+            "description": "Complete assessment of your elevator's current condition before AMC activation to establish a baseline and identify any immediate concerns."
+          },
+          {
+            "title": "Scheduled Monthly or Quarterly Maintenance",
+            "description": "Regular preventive servicing visits as per your chosen AMC plan to keep your elevator in peak operating condition."
+          },
+          {
+            "title": "Timely Replacement of Wear-and-Tear Parts",
+            "description": "Proactive replacement of components showing wear before they cause breakdowns, using genuine OEM-compatible parts."
+          },
+          {
+            "title": "Priority Service for AMC Clients",
+            "description": "AMC clients in Ahmedabad receive priority response for breakdown calls — your elevator recovery comes first."
+          },
+          {
+            "title": "Performance Review & Transparent Reporting",
+            "description": "Regular service reports with full details of work completed, parts used, and upcoming maintenance recommendations."
+          },
+          {
+            "title": "Annual Performance Audit & Plan Renewal",
+            "description": "End-of-year evaluation of elevator performance, breakdown history, and maintenance effectiveness, followed by recommendations and AMC plan renewal or upgrade."
+          }
+        ],
+        "features": [
+          "Comprehensive and non-comprehensive AMC plan options",
+          "Priority breakdown response for all AMC clients in Ahmedabad",
+          "Scheduled preventive and corrective maintenance visits",
+          "Genuine OEM-compatible spare parts included as per plan",
+          "Transparent performance reports after every service visit"
+        ],
+        "benefits": [
+          "Consistent elevator performance with minimal unplanned downtime",
+          "Significantly reduced long-term repair and breakdown costs",
+          "Priority treatment and faster response during emergencies",
+          "Complete peace of mind with a single annual maintenance plan"
+        ],
+        "faqs": [
+          {
+            "question": "What is the difference between comprehensive and non-comprehensive AMC?",
+            "answer": "A comprehensive AMC covers both labour and spare parts replacement costs within the contract. A non-comprehensive AMC covers labour and routine servicing, with spare parts charged separately. Revotek offers both options to suit different budgets."
+          },
+          {
+            "question": "Is an AMC worth it for a residential elevator in Ahmedabad?",
+            "answer": "Yes. An AMC is highly recommended for residential elevators. Regular professional maintenance prevents costly breakdowns, extends the elevator's lifespan, and ensures the safety of residents — at a predictable annual cost."
+          },
+          {
+            "question": "How many maintenance visits are included in an AMC?",
+            "answer": "The number of visits depends on the AMC plan selected. Our standard plans include monthly visits, giving your elevator 12 professional maintenance checks per year."
+          },
+          {
+            "question": "Can I get an AMC for an elevator installed by a different company?",
+            "answer": "Yes. We provide AMC services for elevators installed by all major brands and companies in Ahmedabad. Our technicians are trained across multiple elevator systems."
+          }
+        ],
+        "assets_bannerImage": {
+          "src": "/assets/services/amc.webp",
+          "alt": "Revotek Elevators technician conducting scheduled AMC maintenance visit in Ahmedabad"
+        },
+        "cta": {
+          "label": "Get an AMC Quote",
+          "href": "/contact"
+        }
+      },
+      {
+        "slug": "spare-parts",
+        "title": "Elevator Spare Parts Supply",
+        "shortDescription": "Supply of high-quality elevator spare parts including control panels, motors, ropes, and safety components.",
+        "metaTitle": "Elevator Spare Parts Supply in Ahmedabad | Revotek Elevators",
+        "metaDescription": "OEM-grade elevator spare parts supply in Ahmedabad and Gujarat. Compatible with OTIS, KONE, Schindler, Johnson, Mitsubishi, and more. Fast delivery and installation support.",
+        "keywords": [
+          "elevator spare parts Ahmedabad",
+          "lift spare parts Gujarat",
+          "elevator components supplier Ahmedabad",
+          "OEM elevator parts Ahmedabad",
+          "elevator parts supply Gujarat"
+        ],
+        "hero": {
+          "badgeTitle": "Elevator Spare Parts",
+          "heading": "Elevator Spare Parts Supply in Gujarat",
+          "description": "Revotek Elevators supplies high-quality, OEM-grade elevator spare parts compatible with all major brands including OTIS, KONE, Johnson, Schindler, and Mitsubishi. We serve elevator companies, building managers, and maintenance teams across Ahmedabad and Gujarat with fast, reliable parts delivery and optional installation support."
+        },
+        "overview": "Getting the right spare part quickly is critical to minimising elevator downtime. Revotek maintains a wide inventory of elevator components in Ahmedabad, covering control boards, door systems, motors, ropes, drive units, sensors, and safety devices. Every part we supply is OEM-grade, quality-inspected, and compatible with your specific elevator model and brand.",
+        "process": [
+          {
+            "title": "Requirement Analysis & Part Verification",
+            "description": "Matching your exact elevator model, brand, and specifications to identify the correct compatible component from our inventory."
+          },
+          {
+            "title": "Sourcing Genuine OEM Components",
+            "description": "Procuring quality-assured, OEM-grade parts from trusted suppliers to ensure reliability and compatibility."
+          },
+          {
+            "title": "Quality Inspection & Secure Packaging",
+            "description": "Every part is inspected before dispatch and packaged securely to ensure damage-free delivery to your location in Ahmedabad or Gujarat."
+          },
+          {
+            "title": "Fast Dispatch & Delivery",
+            "description": "Quick supply turnaround to minimise elevator downtime — especially important for urgent breakdown situations."
+          },
+          {
+            "title": "Compatibility Testing & Technical Validation",
+            "description": "Final verification to ensure the supplied part integrates correctly with your elevator system, preventing mismatches and ensuring optimal performance."
+          },
+          {
+            "title": "Optional Installation Support",
+            "description": "Our technicians can assist with component fitment if required, ensuring correct installation and system performance."
+          }
+        ],
+        "features": [
+          "Wide inventory of elevator components for all major brands",
+          "OEM-grade quality with warranty on supplied parts",
+          "Compatible with OTIS, KONE, Johnson, Schindler, Mitsubishi, and more",
+          "Competitive and transparent pricing with no hidden costs",
+          "Fast dispatch and reliable delivery across Ahmedabad and Gujarat"
+        ],
+        "benefits": [
+          "Reduced elevator downtime with fast parts availability",
+          "Reliable, long-lasting components with OEM-grade quality assurance",
+          "Perfect model compatibility verified before every order",
+          "Optional on-site installation support from trained technicians"
+        ],
+        "faqs": [
+          {
+            "question": "Which elevator brands do you supply spare parts for?",
+            "answer": "We supply spare parts compatible with all major elevator brands including OTIS, KONE, Johnson, Schindler, Mitsubishi, and many others. Contact us with your elevator model details and we will confirm availability."
+          },
+          {
+            "question": "Are the spare parts OEM or aftermarket?",
+            "answer": "We supply OEM-grade components that are quality-inspected and certified for compatibility. All parts come with warranty and meet the required performance and safety standards."
+          },
+          {
+            "question": "How quickly can you deliver spare parts in Ahmedabad?",
+            "answer": "For parts available in our Ahmedabad inventory, we aim to dispatch on the same or next business day. Delivery timelines depend on your location within Gujarat or India."
+          },
+          {
+            "question": "Can you help install the spare part after supply?",
+            "answer": "Yes. We offer optional installation support by our trained technicians in Ahmedabad and surrounding areas in Gujarat to ensure correct fitment and system performance."
+          }
+        ],
+        "assets_bannerImage": {
+          "src": "/assets/services/spare-parts.webp",
+          "alt": "Elevator spare parts inventory at Revotek Elevators Ahmedabad including control boards motors and safety components"
+        },
+        "cta": {
+          "label": "Request Parts Availability",
+          "href": "/contact"
+        }
+      }
+    ]
+  }
+}

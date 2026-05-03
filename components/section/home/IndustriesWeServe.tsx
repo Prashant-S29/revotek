@@ -29,10 +29,6 @@ export const IndustriesWeServe: React.FC = () => {
         {industries.items.map((item, index) => (
           <li key={index}>
             <article className="h-full p-8 bg-gray-100 rounded-2xl flex flex-col gap-3">
-              {/*
-                Icon placeholder — swap with your actual icon per item
-                if you add an icon field to the JSON later
-              */}
               <div
                 className="w-12 h-12 rounded-xl bg-brand-primary/15 flex items-center justify-center"
                 aria-hidden="true"

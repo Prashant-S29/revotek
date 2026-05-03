@@ -8,7 +8,7 @@ export const WhoWeAre: React.FC = () => {
     <section
       id="about-who-we-are"
       aria-labelledby="who-we-are-heading"
-      className="w-full px-50 pb-25"
+      className="w-full px-50 py-25"
     >
       <div className="w-full flex gap-20 ">
         <div className="relative w-200 h-100 overflow-hidden rounded-3xl">
