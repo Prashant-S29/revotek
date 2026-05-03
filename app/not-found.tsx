@@ -8,7 +8,7 @@ import { baseInfo } from "@/seo-configs/baseInfo";
 
 // utils
 import { buildPageMetadata } from "@/lib/seo/buildPageMetadata";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Page Not Found",
@@ -47,16 +47,16 @@ const NotFound: React.FC = () => {
         aria-label="Return navigation"
         className="mt-8 flex flex-col sm:flex-row items-center gap-4"
       >
-        <Button
-          variant="default"
-          size="lg"
-          nativeButton={false}
-          render={
-            <Link href="/" aria-label={`Return to ${baseInfo.name} homepage`}>
-              Back to Home
-            </Link>
-          }
-        />
+        <Link
+          className={buttonVariants({
+            variant: "default",
+            size: "lg",
+          })}
+          href="/"
+          aria-label={`Return to ${baseInfo.name} homepage`}
+        >
+          Back to Home
+        </Link>
       </nav>
     </main>
   );

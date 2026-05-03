@@ -6,7 +6,7 @@
         "src": "/assets/home/homebanner.webp",
         "alt": "home page banner"
       },
-      "heading": "Your Trusted Partner in Elevator Service & Maintenance",
+      "heading": "Your Trusted Partner in Elevator Services & Maintenance",
       "description": "We design, install, and maintain elevators built for long-term performance. Our skilled technicians ensure seamless mobility and modern safety standards.",
       "ctas": [
         {
@@ -15,9 +15,10 @@
           "label": "Request for a Service"
         },
         {
-          "variant": "outline",
-          "link": "/services",
-          "label": "All Services"
+          "variant": "default",
+          "link": "/assets/product-brochure.pdf",
+          "label": "Download Product Brochure",
+          "icon": "download"
         }
       ]
     },
@@ -215,9 +216,8 @@
       "heading": "Looking for Reliable Elevator Services in your area?",
       "description": "Contact Revotek Elevators for professional installation, maintenance, and repair services. Our team is ready to provide safe, efficient, and long-lasting elevator solutions tailored to your needs.",
       "cta": {
-        "label": "Contact Us",
-        "link": "/contact",
-        "variant": "brand"
+        "label": "Chat on WhatsApp",
+        "link": "https://wa.me/919265999898"
       }
     }
   }

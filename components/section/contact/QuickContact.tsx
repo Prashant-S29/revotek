@@ -29,7 +29,7 @@ export const QuickContact: React.FC = () => {
         href={quickContact.whatsapp.href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`${quickContact.whatsapp.label} — opens WhatsApp`}
+        aria-label={`${quickContact.whatsapp.label}  opens WhatsApp`}
         className="inline-flex items-center justify-center gap-3 size-5 w-full h-13 rounded-xl bg-green-500 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-green-500"
       >
         <HugeiconsIcon icon={WhatsappFreeIcons} />

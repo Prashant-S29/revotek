@@ -29,7 +29,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = ({ service }) => {
           id="service-contact-heading"
           className="text-3xl md:text-4xl lg:text-5xl font-semibold  leading-tight max-w-3xl"
         >
-          Ready to Get Professional {service.title} in Ahmedabad?
+          Ready to Get Professional {service.title} in Gujrat?
         </h2>
 
         <p className="text-lg  leading-relaxed max-w-xl">

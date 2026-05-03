@@ -3,6 +3,13 @@ import Link from "next/link";
 import { homePageContent } from "@/content/home.json";
 import { Button, buttonVariants } from "@/components/ui/button";
 
+import { DownloadIcon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+
+const iconMap = {
+  download: DownloadIcon,
+};
+
 export const Hero: React.FC = () => {
   const { hero } = homePageContent;
 
@@ -38,17 +45,32 @@ export const Hero: React.FC = () => {
         <p className="mt-2 text-lg text-muted-foreground leading-tight max-w-3xl">
           {hero.description}
         </p>
-
         <nav aria-label="Hero call to action" className="flex gap-3 mt-8">
-          {hero.ctas.map((cta, index) => (
-            <Button
-              key={index}
-              variant={cta.variant as keyof typeof buttonVariants}
-              size="lg"
-              nativeButton={false}
-              render={<Link href={cta.link}>{cta.label}</Link>}
-            />
-          ))}
+          {hero.ctas.map((cta, index) => {
+            const isDownload = cta.link.endsWith(".pdf");
+            const sharedClassName = buttonVariants({
+              variant: cta.variant as keyof typeof buttonVariants,
+              size: "xl",
+            });
+            const icon = cta.icon && iconMap[cta.icon as keyof typeof iconMap];
+
+            return isDownload ? (
+              <Link
+                key={index}
+                href={cta.link}
+                download
+                className={sharedClassName}
+              >
+                {icon && <HugeiconsIcon icon={icon} className="size-4" />}
+                {cta.label}
+              </Link>
+            ) : (
+              <Link key={index} href={cta.link} className={sharedClassName}>
+                {icon && <HugeiconsIcon icon={icon} className="size-4" />}
+                {cta.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </section>

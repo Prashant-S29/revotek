@@ -12,7 +12,7 @@ import { Menu09Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 
 // components
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -21,6 +21,7 @@ import {
   SheetTitle,
   SheetClose,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 
 const data = {
   logo: "/assets/logo.webp",
@@ -81,30 +82,36 @@ export const Header: React.FC = () => {
             const isActive = pathname === item.href;
             return (
               <li key={item.href}>
-                <Button
-                  variant="ghost"
-                  size="lg"
+                <Link
                   aria-current={isActive ? "page" : undefined}
-                  className={
+                  href={item.href}
+                  className={cn(
+                    buttonVariants({
+                      variant: "ghost",
+                      size: "lg",
+                    }),
                     isActive
                       ? "text-brand-primary font-semibold underline underline-offset-4"
-                      : ""
-                  }
-                  nativeButton={false}
-                  render={<Link href={item.href}>{item.label}</Link>}
-                />
+                      : "",
+                  )}
+                >
+                  {item.label}
+                </Link>
               </li>
             );
           })}
 
           <li>
-            <Button
-              size="lg"
-              nativeButton={false}
-              render={
-                <Link href={data.contactCTA.href}>{data.contactCTA.label}</Link>
-              }
-            />
+            <Link
+              href={data.contactCTA.href}
+              className={cn(
+                buttonVariants({
+                  size: "lg",
+                }),
+              )}
+            >
+              {data.contactCTA.label}
+            </Link>
           </li>
         </ul>
       </nav>
@@ -144,32 +151,34 @@ export const Header: React.FC = () => {
                     <SheetClose
                       nativeButton={false}
                       render={
-                        <Button
-                          variant="ghost"
-                          size="lg"
-                          className={`
-                            w-full justify-start text-base
-                            ${isActive ? "text-brand-primary font-semibold" : ""}
-                          `}
-                          aria-current={isActive ? "page" : undefined}
-                          nativeButton={false}
-                          render={<Link href={item.href}>{item.label}</Link>}
-                        />
+                        <Link
+                          href={item.href}
+                          className={cn(
+                            buttonVariants({
+                              variant: "ghost",
+                              size: "lg",
+                            }),
+                            isActive ? "text-brand-primary font-semibold" : "",
+                          )}
+                        >
+                          {item.label}
+                        </Link>
                       }
                     />
                   </li>
                 );
               })}
               <li>
-                <Button
-                  size="lg"
-                  nativeButton={false}
-                  render={
-                    <Link href={data.contactCTA.href}>
-                      {data.contactCTA.label}
-                    </Link>
-                  }
-                />
+                <Link
+                  href={data.contactCTA.href}
+                  className={cn(
+                    buttonVariants({
+                      size: "lg",
+                    }),
+                  )}
+                >
+                  {data.contactCTA.label}
+                </Link>
               </li>
             </ul>
           </nav>

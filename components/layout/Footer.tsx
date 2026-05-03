@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { baseInfo } from "@/seo-configs/baseInfo";
 
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -13,6 +13,7 @@ import {
   WhatsappIcon,
   ArrowUp01Icon,
 } from "@hugeicons/core-free-icons";
+import { cn } from "@/lib/utils";
 
 const data = {
   logo: baseInfo.logo,
@@ -78,22 +79,21 @@ export const Footer: React.FC = () => {
             >
               {Object.entries(data.socials).map(([platform, href]) => (
                 <li key={platform}>
-                  <Button
-                    variant="outline"
-                    size="icon-lg"
-                    className="bg-transparent border-muted-foreground text-white hover:bg-brand-primary hover:text-primary rounded-full"
-                    nativeButton={false}
-                    render={
-                      <Link
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={platform}
-                      >
-                        <SocialIcon platform={platform} />
-                      </Link>
-                    }
-                  />
+                  <Link
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={platform}
+                    className={cn(
+                      buttonVariants({
+                        variant: "outline",
+                        size: "icon-lg",
+                      }),
+                      "bg-transparent border-muted-foreground text-white hover:bg-primary-foreground hover:text-primary rounded-full",
+                    )}
+                  >
+                    <SocialIcon platform={platform} />
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
 
       <Separator className="bg-accent-foreground" />
 
-      <div className="px-50 md:px-12 py-6">
+      <div className="py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/60 text-center sm:text-left">
             © {data.copyright.year}, All rights reserved by{" "}

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { homePageContent } from "@/content/home.json";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const AboutPreview: React.FC = () => {
   const { aboutPreview } = homePageContent;
@@ -34,15 +35,18 @@ export const AboutPreview: React.FC = () => {
           ))}
         </ul>
 
-        <Button
-          variant="brand"
-          size="lg"
-          className="mt-10"
-          nativeButton={false}
-          render={
-            <Link href={aboutPreview.cta.link}>{aboutPreview.cta.label}</Link>
-          }
-        />
+        <Link
+          href={aboutPreview.cta.link}
+          className={cn(
+            buttonVariants({
+              variant: "brand",
+              size: "lg",
+            }),
+            "mt-10",
+          )}
+        >
+          {aboutPreview.cta.label}
+        </Link>
       </div>
 
       <div className="relative w-125 h-80 shrink-0">

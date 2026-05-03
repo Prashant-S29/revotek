@@ -1,5 +1,3 @@
-// File: revotek-new/app/services/[slug]/page.tsx
-
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildPageMetadata } from "@/lib/seo/buildPageMetadata";
@@ -13,11 +11,6 @@ import {
   ServiceFeaturesBenefits,
   ServiceOverview,
   ServiceProcess,
-  // ServiceOverview,
-  // ServiceProcess,
-  // ServiceFeaturesBenefits,
-  // ServiceFAQs,
-  // ContactBanner,
 } from "@/components/section/services/details";
 
 export const dynamic = "force-static";

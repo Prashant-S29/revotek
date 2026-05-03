@@ -4,6 +4,7 @@ import { homePageContent } from "@/content/home.json";
 import { servicesPageContent } from "@/content/services.json";
 
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const ServicesGrid: React.FC = () => {
   const { servicesGrid } = servicesPageContent;
@@ -58,10 +59,13 @@ export const ServicesGrid: React.FC = () => {
 
               <Link
                 href={service.cta.href}
-                className={buttonVariants({
-                  variant: "default",
-                  size: "lg",
-                })}
+                className={cn(
+                  buttonVariants({
+                    variant: "default",
+                    size: "lg",
+                  }),
+                  "w-fit",
+                )}
                 aria-label={`${service.cta.label} about ${service.title}`}
               >
                 {service.cta.label}
