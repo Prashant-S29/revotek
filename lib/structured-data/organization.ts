@@ -56,8 +56,10 @@ export function buildOrganizationSchema(
     description: overrides.description ?? baseInfo.description,
 
     // ── Contact ──────────────────────────────────────────────────────────────
-    ...optional(baseInfo.phone, { telephone: baseInfo.phone }),
-    ...optional(baseInfo.email, { email: baseInfo.email }),
+    ...optional(baseInfo.phones[2].label, {
+      telephone: baseInfo.phones[2].label,
+    }),
+    ...optional(baseInfo.emails.primary, { email: baseInfo.emails.primary }),
 
     // ── Address ──────────────────────────────────────────────────────────────
 

@@ -15,8 +15,30 @@ export const baseInfo = {
   description:
     "Your trusted partner for professional elevator installation, maintenance, repair, and modernization services. Serving residential, commercial, and industrial clients across India.",
 
-  email: "info@revotekelevators.com",
-  phone: "+91-92659-99898",
+  emails: {
+    primary: "info@revotekelevators.com",
+    secondary: "revotekservices@gmail.com",
+  },
+  phones: [
+    {
+      area: "Gandhinagar",
+      name: "Sunil Vadan",
+      label: "+91 84012 54119",
+      href: "tel:+918401254119",
+    },
+    {
+      area: "New Ahmedabad",
+      name: "Dhruv Patel",
+      label: "+91 85113 76037",
+      href: "tel:+918511376037",
+    },
+    {
+      area: "Old Ahmedabad",
+      name: "Dilip Varlekar",
+      label: "+91 92659 99898",
+      href: "tel:+919265999898",
+    },
+  ],
 
   address: {
     streetAddress:
@@ -25,6 +47,8 @@ export const baseInfo = {
     addressRegion: "Gujarat",
     postalCode: "382445",
     addressCountry: "IN",
+    googleMapSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.5364399611703!2d72.64495699999999!3d22.976447500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8942442fd955%3A0xb68dd4e3bba0491d!2sShree%20Hari%20Industrial%20Park!5e1!3m2!1sen!2sin!4v1761975771820!5m2!1sen!2sin",
   },
 
   logo: `${baseUrl}/assets/logo.webp`,

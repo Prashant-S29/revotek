@@ -20,33 +20,11 @@ const data = {
   socials: baseInfo.social,
   contact: {
     address: baseInfo.address,
-    emails: {
-      primary: baseInfo.email,
-      secondary: "revotekservices@gmail.com",
-    },
-    phones: [
-      {
-        area: "Gandhinagar",
-        name: "Sunil Vadan",
-        label: "+91 84012 54119",
-        href: "tel:+918401254119",
-      },
-      {
-        area: "New Ahmedabad",
-        name: "Dhruv Patel",
-        label: "+91 85113 76037",
-        href: "tel:+918511376037",
-      },
-      {
-        area: "Old Ahmedabad",
-        name: "Dilip Varlekar",
-        label: "+91 92659 99898",
-        href: "tel:+919265999898",
-      },
-    ],
+    emails: baseInfo.emails,
+    phones: baseInfo.phones,
   },
   map: {
-    src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3491.5364399611703!2d72.64495699999999!3d22.976447500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8942442fd955%3A0xb68dd4e3bba0491d!2sShree%20Hari%20Industrial%20Park!5e1!3m2!1sen!2sin!4v1761975771820!5m2!1sen!2sin",
+    src: baseInfo.address.googleMapSrc,
     title: "Revotek Office Location Map",
   },
   quickLinks: [
@@ -84,7 +62,7 @@ const scrollToTop = () => {
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-foreground px-50">
-      <div className="md:px-12 pt-16 pb-10">
+      <div className=" pt-16 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           <div className="flex flex-col gap-6">
             <Link href="/" aria-label="Go to homepage" className="w-fit">

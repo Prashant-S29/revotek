@@ -16,7 +16,7 @@
         },
         {
           "variant": "outline",
-          "link": "#services",
+          "link": "/services",
           "label": "All Services"
         }
       ]

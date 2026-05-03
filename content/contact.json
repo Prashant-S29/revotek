@@ -1,0 +1,104 @@
+{
+  "contactPageContent": {
+    "hero": {
+      "heading": "Let's Talk About Your Elevator Requirements",
+      "description": "Whether you need a new installation, a maintenance visit, an urgent repair, or an AMC quote — our team in Ahmedabad is ready to help. Fill in the form and we will get back to you promptly."
+    },
+    "form": {
+      "heading": "Send Us a Message",
+      "description": "We typically respond within one business day.",
+      "fields": {
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Your full name",
+          "required": true,
+          "validation": {
+            "minLength": 2,
+            "maxLength": 100,
+            "messages": {
+              "required": "Please enter your full name.",
+              "minLength": "Name must be at least 2 characters.",
+              "maxLength": "Name cannot exceed 100 characters."
+            }
+          }
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "Your 10-digit mobile number",
+          "required": true,
+          "validation": {
+            "pattern": "^[6-9]\\d{9}$",
+            "messages": {
+              "required": "Please enter your phone number.",
+              "pattern": "Please enter a valid 10-digit Indian mobile number."
+            }
+          }
+        },
+        "email": {
+          "label": "Email Address",
+          "placeholder": "your@email.com",
+          "required": false,
+          "validation": {
+            "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+            "messages": {
+              "pattern": "Please enter a valid email address."
+            }
+          }
+        },
+        "message": {
+          "label": "How Can We Help?",
+          "placeholder": "Tell us about your elevator requirements — service type, building type, location, or any specific concerns.",
+          "required": true,
+          "validation": {
+            "minLength": 10,
+            "maxLength": 1000,
+            "messages": {
+              "required": "Please describe how we can help.",
+              "minLength": "Please provide at least 10 characters.",
+              "maxLength": "Message cannot exceed 1000 characters."
+            }
+          }
+        }
+      },
+      "submit": {
+        "label": "Send Message",
+        "labelLoading": "Sending...",
+        "labelSuccess": "Message Sent"
+      },
+      "feedback": {
+        "success": {
+          "heading": "Thank You for Reaching Out",
+          "message": "We have received your message and will get back to you within one business day. For urgent requirements, please call us directly."
+        },
+        "error": {
+          "heading": "Something Went Wrong",
+          "message": "Your message could not be sent at this time. Please try again or contact us directly by phone."
+        }
+      }
+    },
+    "quickContact": {
+      "heading": "Prefer to Reach Us Directly?",
+      "description": "Our team is available Monday to Sunday, 9:00 AM to 6:00 PM IST.",
+      "whatsapp": {
+        "label": "Chat on WhatsApp",
+        "href": "https://wa.me/919265999898"
+      }
+    },
+    "map": {
+      "heading": "Find Us in Ahmedabad",
+      "embedSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.446!2d72.6451137!3d22.9782641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU4JzQxLjgiTiA3MsKwMzgnNDIuNCJF!5e0!3m2!1sen!2sin!4v1234567890",
+      "title": "Revotek Elevators location at Vatva GIDC Ahmedabad"
+    },
+    "seo": {
+      "metaTitle": "Contact Revotek Elevators | Elevator Services in Ahmedabad",
+      "metaDescription": "Contact Revotek Elevators in Ahmedabad for elevator installation, maintenance, repair, AMC, and spare parts. Reach our team by phone, WhatsApp, or email.",
+      "keywords": [
+        "contact Revotek Elevators",
+        "elevator service contact Ahmedabad",
+        "elevator company Ahmedabad contact",
+        "elevator repair contact Gujarat",
+        "elevator maintenance Ahmedabad phone"
+      ]
+    }
+  }
+}
