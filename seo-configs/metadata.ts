@@ -80,32 +80,16 @@ export const rootMetadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-
-  // Add more sizes for full cross-platform support
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" }, // TODO: add /public/icon.svg
-    ],
-    apple: [
-      { url: "/apple-icon.png", sizes: "180x180" }, // TODO: add /public/apple-icon.png
-    ],
-    other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg" }, // TODO: add safari pin
-    ],
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
 
-  // ── Manifest ──────────────────────────────────────────────────────────────
   manifest: "/manifest.json",
 
-  // ── Verification ──────────────────────────────────────────────────────────
-  // Add your verification tokens after registering on each platform
-  // See README.md → Platform Registration for instructions
   verification: {
-    google: "MLlqy7RymXYeSE0a9ZQh4wXjlHwUhnzWm_7MxtAGCr4", // TODO
-    // yandex: "<YANDEX_WEBMASTER_TOKEN>",                  // TODO
-    // bing is handled via BingSiteAuth.xml in /public/     // TODO
-    // other: { "baidu-site-verification": "<TOKEN>" },     // TODO if targeting China
+    google: "MLlqy7RymXYeSE0a9ZQh4wXjlHwUhnzWm_7MxtAGCr4",
+    yandex: "d70244b4905fbdc9",
   },
 
   category: "engineering",
@@ -171,7 +155,6 @@ export const rootStructuredData = {
       sameAs: sameAsUrls,
     },
 
-    // potentialAction → tells Google your site has internal search
     {
       "@type": "WebSite",
       "@id": `${baseUrl}/#website`,

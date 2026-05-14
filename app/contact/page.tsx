@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
         <section
           id="contact-form-section"
           aria-label="Contact form and direct contact options"
-          className="px-50 py-25"
+          className="px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-15 lg:py-25"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
             <ContactForm />

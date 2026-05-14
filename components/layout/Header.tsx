@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
   return (
     <header
       className={`
-        w-full top-0 fixed z-50 flex justify-between px-6 md:px-20 lg:px-30 xl:px-50 py-4 items-center transition-[background-color,border-color] duration-300
+        w-full top-0 fixed z-50 flex justify-between px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-3 items-center transition-[background-color,border-color] duration-300
         ${scrolled ? "border-b border-gray-200  bg-white" : "border-b border-transparent  bg-transparent"}
       `}
       role="banner"
@@ -69,10 +69,11 @@ export const Header: React.FC = () => {
         <Image
           src={data.logo}
           alt="Revotek logo"
-          width={100}
-          height={80}
+          width={0}
+          height={0}
+          sizes="100vw"
           priority
-          className="h-16 w-auto"
+          className="h-20 w-auto"
         />
       </Link>
 
@@ -91,8 +92,8 @@ export const Header: React.FC = () => {
                       size: "lg",
                     }),
                     isActive
-                      ? "text-brand-primary font-semibold underline underline-offset-4"
-                      : "",
+                      ? "text-brand-primary font-semibold underline underline-offset-4 text-md"
+                      : "text-md",
                   )}
                 >
                   {item.label}

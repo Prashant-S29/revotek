@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { homePageContent } from "@/content/home.json";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 import { DownloadIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -27,52 +30,79 @@ export const Hero: React.FC = () => {
         priority
         fill
         sizes="100vw"
-        className="absolute top-0 left-0 w-full h-full object-cover select-none rounded-br-[150px]"
+        className="absolute top-0 left-0 w-full h-full object-cover select-none sm:rounded-br-[50px] md:rounded-br-[100px]"
       />
 
-      <div className="relative z-10 px-50">
-        <p className="text-lg" aria-hidden="true">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
+      >
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-md text-primary/70 uppercase tracking-normal font-semibold"
+          aria-hidden="true"
+        >
           {hero.badgeTitle}
-        </p>
+        </motion.p>
 
-        <h1
+        <motion.h1
           id="hero-heading"
-          className="text-5xl text-primary max-w-3xl mt-5 font-semibold"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mb-3 mt-3 text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
         >
           {hero.heading}
-        </h1>
+        </motion.h1>
 
-        <p className="mt-2 text-lg text-muted-foreground leading-tight max-w-3xl">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="text-md font-normal tracking-normal text-muted-foreground leading-6"
+        >
           {hero.description}
-        </p>
-        <nav aria-label="Hero call to action" className="flex gap-3 mt-8">
+        </motion.p>
+
+        <motion.nav
+          aria-label="Hero call to action"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="flex flex-col sm:flex-row gap-3 mt-6"
+        >
           {hero.ctas.map((cta, index) => {
             const isDownload = cta.link.endsWith(".pdf");
+
             const sharedClassName = buttonVariants({
               variant: cta.variant as keyof typeof buttonVariants,
               size: "xl",
+              className: "w-fit md:w-auto",
             });
-            const icon = cta.icon && iconMap[cta.icon as keyof typeof iconMap];
 
-            return isDownload ? (
+            const icon =
+              cta.icon && iconMap[cta.icon as keyof typeof iconMap];
+
+            return (
               <Link
                 key={index}
                 href={cta.link}
-                download
+                download={isDownload}
                 className={sharedClassName}
               >
-                {icon && <HugeiconsIcon icon={icon} className="size-4" />}
-                {cta.label}
-              </Link>
-            ) : (
-              <Link key={index} href={cta.link} className={sharedClassName}>
-                {icon && <HugeiconsIcon icon={icon} className="size-4" />}
+                {icon && (
+                  <HugeiconsIcon icon={icon} className="size-4" />
+                )}
                 {cta.label}
               </Link>
             );
           })}
-        </nav>
-      </div>
+        </motion.nav>
+      </motion.div>
     </section>
   );
 };

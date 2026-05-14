@@ -27,6 +27,31 @@ const contactSchema = z.object({
     .union([z.literal(""), z.string().email("Enter a valid email address.")])
     .optional(),
 
+  elevatorName: z
+    .string()
+    .min(1, "Elevator name is required.")
+    .max(100, "Elevator name must be 100 characters or fewer."),
+
+  elevatorCount: z
+    .string()
+    .min(1, "Number of elevators is required.")
+    .regex(/^[1-9]\d*$/, "Please enter a valid number."),
+
+  basementCount: z
+    .string()
+    .min(1, "Number of basements is required.")
+    .regex(/^\d+$/, "Please enter a valid number."),
+
+  floorCount: z
+    .string()
+    .min(1, "Number of floors is required.")
+    .regex(/^[1-9]\d*$/, "Please enter a valid number."),
+
+  passengerCapacity: z
+    .string()
+    .min(1, "Passenger capacity is required.")
+    .regex(/^[1-9]\d*$/, "Please enter a valid number."),
+
   message: z
     .string()
     .min(1, "Message is required.")
@@ -68,20 +93,31 @@ export const ContactForm: React.FC = () => {
       name: "",
       phone: "",
       email: "",
+      elevatorName: "",
+      elevatorCount: "",
+      basementCount: "",
+      floorCount: "",
+      passengerCapacity: "",
       message: "",
     } satisfies ContactValues,
 
     onSubmit: async ({ value }) => {
       setFormState("loading");
       try {
-        console.log(value);
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(value),
+        });
 
-        // if (response.ok) {
-        //   setFormState("success");
-        //   form.reset();
-        // } else {
-        //   setFormState("error");
-        // }
+        if (response.ok) {
+          setFormState("success");
+          form.reset();
+        } else {
+          setFormState("error");
+        }
       } catch {
         setFormState("error");
       }
@@ -172,12 +208,10 @@ export const ContactForm: React.FC = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold text-primary">
+      <h2 className="text-xl font-bold text-primary mb-2">
         {formContent.heading}
       </h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        {formContent.description}
-      </p>
+      <p className="text-md text-muted-foreground">{formContent.description}</p>
 
       <form
         noValidate
@@ -189,224 +223,509 @@ export const ContactForm: React.FC = () => {
         className="mt-8 space-y-6"
         aria-label="Contact Revotek Elevators"
       >
-        <form.Field
-          name="name"
-          validators={{ onChange: ({ value }) => validateField("name", value) }}
-        >
-          {(field) => {
-            const error = extractErrorMessage(field.state.meta.errors);
-            return (
-              <div className="space-y-1.5">
-                <Label
-                  htmlFor={field.name}
-                  className="text-sm font-medium text-primary"
-                >
-                  {fields.name.label}
-                  <span aria-hidden="true" className="ml-1 text-red-500">
-                    *
-                  </span>
-                </Label>
-                <Input
-                  id={field.name}
-                  name={field.name}
-                  type="text"
-                  autoComplete="name"
-                  required
-                  aria-required="true"
-                  aria-invalid={!!error}
-                  aria-describedby={error ? `${field.name}-error` : undefined}
-                  placeholder={fields.name.placeholder}
-                  value={field.state.value}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  onBlur={field.handleBlur}
-                  disabled={isLoading}
-                  className={
-                    error
-                      ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
-                      : ""
-                  }
-                />
-                {error && (
-                  <p
-                    id={`${field.name}-error`}
-                    role="alert"
-                    className="text-xs text-red-600"
-                  >
-                    {error}
-                  </p>
-                )}
-              </div>
-            );
-          }}
-        </form.Field>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="sm:col-span-2">
+            <form.Field
+              name="name"
+              validators={{
+                onChange: ({ value }) => validateField("name", value),
+              }}
+            >
+              {(field) => {
+                const error = extractErrorMessage(field.state.meta.errors);
+                return (
+                  <div className="space-y-1.5">
+                    <Label
+                      htmlFor={field.name}
+                      className="text-sm font-medium text-primary"
+                    >
+                      {fields.name.label}
+                      <span aria-hidden="true" className="ml-1 text-red-500">
+                        *
+                      </span>
+                    </Label>
+                    <Input
+                      id={field.name}
+                      name={field.name}
+                      type="text"
+                      autoComplete="name"
+                      required
+                      aria-required="true"
+                      aria-invalid={!!error}
+                      aria-describedby={
+                        error ? `${field.name}-error` : undefined
+                      }
+                      placeholder={fields.name.placeholder}
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      disabled={isLoading}
+                      className={
+                        error
+                          ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                          : ""
+                      }
+                    />
+                    {error && (
+                      <p
+                        id={`${field.name}-error`}
+                        role="alert"
+                        className="text-xs text-red-600"
+                      >
+                        {error}
+                      </p>
+                    )}
+                  </div>
+                );
+              }}
+            </form.Field>
+          </div>
 
-        <form.Field
-          name="phone"
-          validators={{
-            onChange: ({ value }) => validateField("phone", value),
-          }}
-        >
-          {(field) => {
-            const error = extractErrorMessage(field.state.meta.errors);
-            return (
-              <div className="space-y-1.5">
-                <Label
-                  htmlFor={field.name}
-                  className="text-sm font-medium text-primary"
-                >
-                  {fields.phone.label}
-                  <span aria-hidden="true" className="ml-1 text-red-500">
-                    *
-                  </span>
-                </Label>
-                <Input
-                  id={field.name}
-                  name={field.name}
-                  type="tel"
-                  autoComplete="tel"
-                  inputMode="numeric"
-                  required
-                  aria-required="true"
-                  aria-invalid={!!error}
-                  aria-describedby={error ? `${field.name}-error` : undefined}
-                  placeholder={fields.phone.placeholder}
-                  value={field.state.value}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  onBlur={field.handleBlur}
-                  disabled={isLoading}
-                  maxLength={10}
-                  className={
-                    error
-                      ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
-                      : ""
-                  }
-                />
-                {error && (
-                  <p
-                    id={`${field.name}-error`}
-                    role="alert"
-                    className="text-xs text-red-600"
-                  >
-                    {error}
-                  </p>
-                )}
-              </div>
-            );
-          }}
-        </form.Field>
-
-        <form.Field
-          name="email"
-          validators={{
-            onChange: ({ value }) => validateField("email", value),
-          }}
-        >
-          {(field) => {
-            const error = extractErrorMessage(field.state.meta.errors);
-            return (
-              <div className="space-y-1.5">
-                <Label
-                  htmlFor={field.name}
-                  className="text-sm font-medium text-primary"
-                >
-                  {fields.email.label}
-                  <span className="ml-1 text-muted-foreground text-xs">
-                    (optional)
-                  </span>
-                </Label>
-                <Input
-                  id={field.name}
-                  name={field.name}
-                  type="email"
-                  autoComplete="email"
-                  aria-invalid={!!error}
-                  aria-describedby={error ? `${field.name}-error` : undefined}
-                  placeholder={fields.email.placeholder}
-                  value={field.state.value}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  onBlur={field.handleBlur}
-                  disabled={isLoading}
-                  className={
-                    error
-                      ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
-                      : ""
-                  }
-                />
-                {error && (
-                  <p
-                    id={`${field.name}-error`}
-                    role="alert"
-                    className="text-xs text-red-600"
-                  >
-                    {error}
-                  </p>
-                )}
-              </div>
-            );
-          }}
-        </form.Field>
-
-        <form.Field
-          name="message"
-          validators={{
-            onChange: ({ value }) => validateField("message", value),
-          }}
-        >
-          {(field) => {
-            const error = extractErrorMessage(field.state.meta.errors);
-            const maxLength = 1000;
-            return (
-              <div className="space-y-1.5">
-                <div className="flex items-baseline justify-between">
+          <form.Field
+            name="phone"
+            validators={{
+              onChange: ({ value }) => validateField("phone", value),
+            }}
+          >
+            {(field) => {
+              const error = extractErrorMessage(field.state.meta.errors);
+              return (
+                <div className="space-y-1.5">
                   <Label
                     htmlFor={field.name}
                     className="text-sm font-medium text-primary"
                   >
-                    {fields.message.label}
+                    {fields.phone.label}
                     <span aria-hidden="true" className="ml-1 text-red-500">
                       *
                     </span>
                   </Label>
-                  <span
-                    aria-live="polite"
-                    className={`text-xs tabular-nums ${
-                      field.state.value.length > maxLength * 0.9
-                        ? "text-amber-600"
-                        : "text-muted-foreground"
-                    }`}
-                  >
-                    {field.state.value.length}/{maxLength}
-                  </span>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    type="tel"
+                    autoComplete="tel"
+                    inputMode="numeric"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${field.name}-error` : undefined}
+                    placeholder={fields.phone.placeholder}
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    onBlur={field.handleBlur}
+                    disabled={isLoading}
+                    maxLength={10}
+                    className={
+                      error
+                        ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                        : ""
+                    }
+                  />
+                  {error && (
+                    <p
+                      id={`${field.name}-error`}
+                      role="alert"
+                      className="text-xs text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
                 </div>
-                <Textarea
-                  id={field.name}
-                  name={field.name}
-                  rows={5}
-                  required
-                  aria-required="true"
-                  aria-invalid={!!error}
-                  aria-describedby={error ? `${field.name}-error` : undefined}
-                  placeholder={fields.message.placeholder}
-                  value={field.state.value}
-                  onChange={(e) => field.handleChange(e.target.value)}
-                  onBlur={field.handleBlur}
-                  disabled={isLoading}
-                  maxLength={maxLength}
-                  className={`resize-none ${error ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40" : ""}`}
-                />
-                {error && (
-                  <p
-                    id={`${field.name}-error`}
-                    role="alert"
-                    className="text-xs text-red-600"
+              );
+            }}
+          </form.Field>
+
+          <form.Field
+            name="email"
+            validators={{
+              onChange: ({ value }) => validateField("email", value),
+            }}
+          >
+            {(field) => {
+              const error = extractErrorMessage(field.state.meta.errors);
+              return (
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor={field.name}
+                    className="text-sm font-medium text-primary"
                   >
-                    {error}
-                  </p>
-                )}
-              </div>
-            );
-          }}
-        </form.Field>
+                    {fields.email.label}
+                    <span className="ml-1 text-muted-foreground text-xs">
+                      (optional)
+                    </span>
+                  </Label>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    type="email"
+                    autoComplete="email"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${field.name}-error` : undefined}
+                    placeholder={fields.email.placeholder}
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    onBlur={field.handleBlur}
+                    disabled={isLoading}
+                    className={
+                      error
+                        ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                        : ""
+                    }
+                  />
+                  {error && (
+                    <p
+                      id={`${field.name}-error`}
+                      role="alert"
+                      className="text-xs text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
+                </div>
+              );
+            }}
+          </form.Field>
+
+          <div className="sm:col-span-2">
+            <form.Field
+              name="elevatorName"
+              validators={{
+                onChange: ({ value }) => validateField("elevatorName", value),
+              }}
+            >
+              {(field) => {
+                const error = extractErrorMessage(field.state.meta.errors);
+                return (
+                  <div className="space-y-1.5">
+                    <Label
+                      htmlFor={field.name}
+                      className="text-sm font-medium text-primary"
+                    >
+                      Your Elevator Name
+                      <span aria-hidden="true" className="ml-1 text-red-500">
+                        *
+                      </span>
+                    </Label>
+                    <Input
+                      id={field.name}
+                      name={field.name}
+                      type="text"
+                      required
+                      aria-required="true"
+                      aria-invalid={!!error}
+                      aria-describedby={
+                        error ? `${field.name}-error` : undefined
+                      }
+                      placeholder="Enter your elevator name"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      disabled={isLoading}
+                      className={
+                        error
+                          ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                          : ""
+                      }
+                    />
+                    {error && (
+                      <p
+                        id={`${field.name}-error`}
+                        role="alert"
+                        className="text-xs text-red-600"
+                      >
+                        {error}
+                      </p>
+                    )}
+                  </div>
+                );
+              }}
+            </form.Field>
+          </div>
+
+          <form.Field
+            name="elevatorCount"
+            validators={{
+              onChange: ({ value }) => validateField("elevatorCount", value),
+            }}
+          >
+            {(field) => {
+              const error = extractErrorMessage(field.state.meta.errors);
+              return (
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor={field.name}
+                    className="text-sm font-medium text-primary"
+                  >
+                    How Many Elevators You Have in Building?
+                    <span aria-hidden="true" className="ml-1 text-red-500">
+                      *
+                    </span>
+                  </Label>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    type="number"
+                    min={0}
+                    inputMode="numeric"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${field.name}-error` : undefined}
+                    placeholder="Enter number of elevators"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    onBlur={field.handleBlur}
+                    disabled={isLoading}
+                    className={
+                      error
+                        ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                        : ""
+                    }
+                  />
+                  {error && (
+                    <p
+                      id={`${field.name}-error`}
+                      role="alert"
+                      className="text-xs text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
+                </div>
+              );
+            }}
+          </form.Field>
+
+          <form.Field
+            name="basementCount"
+            validators={{
+              onChange: ({ value }) => validateField("basementCount", value),
+            }}
+          >
+            {(field) => {
+              const error = extractErrorMessage(field.state.meta.errors);
+              return (
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor={field.name}
+                    className="text-sm font-medium text-primary"
+                  >
+                    How Many Basement You Have?
+                    <span aria-hidden="true" className="ml-1 text-red-500">
+                      *
+                    </span>
+                  </Label>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    type="number"
+                    min={0}
+                    inputMode="numeric"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${field.name}-error` : undefined}
+                    placeholder="Enter number of basements"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    onBlur={field.handleBlur}
+                    disabled={isLoading}
+                    className={
+                      error
+                        ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                        : ""
+                    }
+                  />
+                  {error && (
+                    <p
+                      id={`${field.name}-error`}
+                      role="alert"
+                      className="text-xs text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
+                </div>
+              );
+            }}
+          </form.Field>
+
+          <form.Field
+            name="floorCount"
+            validators={{
+              onChange: ({ value }) => validateField("floorCount", value),
+            }}
+          >
+            {(field) => {
+              const error = extractErrorMessage(field.state.meta.errors);
+              return (
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor={field.name}
+                    className="text-sm font-medium text-primary"
+                  >
+                    How Many Floor You Have?
+                    <span aria-hidden="true" className="ml-1 text-red-500">
+                      *
+                    </span>
+                  </Label>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    type="number"
+                    min={0}
+                    inputMode="numeric"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${field.name}-error` : undefined}
+                    placeholder="Enter number of floors"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    onBlur={field.handleBlur}
+                    disabled={isLoading}
+                    className={
+                      error
+                        ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                        : ""
+                    }
+                  />
+                  {error && (
+                    <p
+                      id={`${field.name}-error`}
+                      role="alert"
+                      className="text-xs text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
+                </div>
+              );
+            }}
+          </form.Field>
+
+          <form.Field
+            name="passengerCapacity"
+            validators={{
+              onChange: ({ value }) =>
+                validateField("passengerCapacity", value),
+            }}
+          >
+            {(field) => {
+              const error = extractErrorMessage(field.state.meta.errors);
+              return (
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor={field.name}
+                    className="text-sm font-medium text-primary"
+                  >
+                    Your Passenger Capacity
+                    <span aria-hidden="true" className="ml-1 text-red-500">
+                      *
+                    </span>
+                  </Label>
+                  <Input
+                    id={field.name}
+                    name={field.name}
+                    type="number"
+                    min={0}
+                    inputMode="numeric"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${field.name}-error` : undefined}
+                    placeholder="Enter passenger capacity"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    onBlur={field.handleBlur}
+                    disabled={isLoading}
+                    className={
+                      error
+                        ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40"
+                        : ""
+                    }
+                  />
+                  {error && (
+                    <p
+                      id={`${field.name}-error`}
+                      role="alert"
+                      className="text-xs text-red-600"
+                    >
+                      {error}
+                    </p>
+                  )}
+                </div>
+              );
+            }}
+          </form.Field>
+
+          <div className="sm:col-span-2">
+            <form.Field
+              name="message"
+              validators={{
+                onChange: ({ value }) => validateField("message", value),
+              }}
+            >
+              {(field) => {
+                const error = extractErrorMessage(field.state.meta.errors);
+                const maxLength = 1000;
+                return (
+                  <div className="space-y-1.5">
+                    <div className="flex items-baseline justify-between">
+                      <Label
+                        htmlFor={field.name}
+                        className="text-sm font-medium text-primary"
+                      >
+                        {fields.message.label}
+                        <span aria-hidden="true" className="ml-1 text-red-500">
+                          *
+                        </span>
+                      </Label>
+                      <span
+                        aria-live="polite"
+                        className={`text-xs tabular-nums ${
+                          field.state.value.length > maxLength * 0.9
+                            ? "text-amber-600"
+                            : "text-muted-foreground"
+                        }`}
+                      >
+                        {field.state.value.length}/{maxLength}
+                      </span>
+                    </div>
+                    <Textarea
+                      id={field.name}
+                      name={field.name}
+                      rows={5}
+                      required
+                      aria-required="true"
+                      aria-invalid={!!error}
+                      aria-describedby={
+                        error ? `${field.name}-error` : undefined
+                      }
+                      placeholder={fields.message.placeholder}
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      onBlur={field.handleBlur}
+                      disabled={isLoading}
+                      maxLength={maxLength}
+                      className={`resize-none ${error ? "border-red-400 bg-red-50 focus-visible:ring-red-400/40" : ""}`}
+                    />
+                    {error && (
+                      <p
+                        id={`${field.name}-error`}
+                        role="alert"
+                        className="text-xs text-red-600"
+                      >
+                        {error}
+                      </p>
+                    )}
+                  </div>
+                );
+              }}
+            </form.Field>
+          </div>
+        </div>
 
         <p className="text-xs text-muted-foreground">
           Fields marked{" "}

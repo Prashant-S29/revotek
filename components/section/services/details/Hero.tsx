@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import { servicesPageContent } from "@/content/services.json";
 import { BreadcrumbNav } from "@/components/common";
 
@@ -7,47 +11,93 @@ interface HeroProps {
   service: Service;
 }
 
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+};
+
 export const Hero: React.FC<HeroProps> = ({ service }) => {
   return (
     <section
       id={`service-${service.slug}-hero`}
       aria-labelledby="service-detail-hero-heading"
-      className="relative w-full bg-brand-primary/20 overflow-hidden"
+      className="relative w-full bg-brand-primary/10 overflow-hidden"
     >
-      <div
+      {/* Floating background shapes */}
+      <motion.div
+        animate={{
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+        }}
         aria-hidden="true"
-        className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-primary/20 z-0"
+        className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-primary/10 z-0"
       />
-      <div
+
+      <motion.div
+        animate={{
+          y: [0, 15, 0],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+        }}
         aria-hidden="true"
-        className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-brand-primary/20 z-0"
+        className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-brand-primary/10 z-0"
       />
 
-      <div className="relative z-10 px-8 md:px-16 lg:px-24 xl:px-32 pt-50 pb-25 flex flex-col items-center text-center">
-        <BreadcrumbNav
-          items={[
-            { label: "Services", href: "/services" },
-            { label: service.title, href: `/services/${service.slug}` },
-          ]}
-          className="mb-6"
-        />
+      {/* Content */}
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+        className="relative z-10 px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 pt-40 md:pt-50 pb-25 flex flex-col items-center text-center"
+      >
+        <motion.div variants={fadeUp}>
+          <BreadcrumbNav
+            items={[
+              {
+                label: "Services",
+                href: "/services",
+              },
+              {
+                label: service.title,
+                href: `/services/${service.slug}`,
+              },
+            ]}
+            className="mb-6"
+          />
+        </motion.div>
 
-        <p className="text-lg text-primary font-medium mb-4" aria-hidden="true">
-          {service.hero.badgeTitle}
-        </p>
-
-        <h1
+        <motion.h1
+          variants={fadeUp}
           id="service-detail-hero-heading"
-          className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary leading-tight mt-2 max-w-4xl"
+          className="text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary mt-5"
         >
           {service.hero.heading}
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
+        <motion.p
+          variants={fadeUp}
+          transition={{ delay: 0.2 }}
+          className="mt-6 text-md font-normal tracking-normal text-muted-foreground leading-6 md:max-w-4xl"
+        >
           {service.hero.description}
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
+      {/* Bottom border */}
       <div
         aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 h-px bg-gray-200"
