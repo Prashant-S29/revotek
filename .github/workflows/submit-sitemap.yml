@@ -1,13 +1,12 @@
 name: Submit Sitemap
 
 on:
-  workflow_run:
-    workflows: ["Vercel Production Deployment"]
-    types: [completed]
+  push:
+    branches:
+      - main
 
 jobs:
   submit:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,9 +20,14 @@ jobs:
           node-version: 20
           cache: "pnpm"
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - run: pnpm submit-sitemap
+      - name: Wait for Vercel deployment
+        run: sleep 90
+
+      - name: Submit sitemap
+        run: pnpm submit-sitemap
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           INDEXNOW_API_KEY: ${{ secrets.INDEXNOW_API_KEY }}
