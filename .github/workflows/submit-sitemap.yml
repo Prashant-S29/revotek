@@ -11,22 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9
-
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+          node-version: 22
 
       - name: Wait for Vercel deployment
         run: sleep 60
 
       - name: Submit sitemap
-        run: pnpm submit-sitemap
+        run: node --experimental-strip-types scripts/submit-sitemap.ts
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
           INDEXNOW_API_KEY: ${{ secrets.INDEXNOW_API_KEY }}
