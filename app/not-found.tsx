@@ -8,7 +8,7 @@ import { baseInfo } from "@/seo-configs/baseInfo";
 
 // utils
 import { buildPageMetadata } from "@/lib/seo/buildPageMetadata";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Page Not Found",

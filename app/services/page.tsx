@@ -7,7 +7,7 @@ import { Hero, ServicesGrid } from "@/components/section/services";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Services | Revotek Elevators - Elevator Company in Gujarat",
+  title: "Services",
   description:
     "Revotek Elevators offers complete elevator services in Ahmedabad and Gandhinagar, Gujarat. Installation, maintenance, repair, modernization, AMC, and spare parts supply for residential, commercial, and industrial buildings.",
   path: "/services",

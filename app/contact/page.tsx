@@ -7,7 +7,7 @@ import { ContactForm, Hero, QuickContact } from "@/components/section/contact";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact Revotek Elevators | Elevator Services in Ahmedabad, Gujarat",
+  title: "Contact Revotek Elevators",
   description:
     "Contact Revotek Elevators in Ahmedabad for elevator installation, maintenance, repair, AMC, and spare parts. Call, WhatsApp, or fill the form — our team responds within one business day.",
   path: "/contact",
