@@ -229,8 +229,8 @@ async function pingBingSitemap(sitemapUrl: string): Promise<boolean> {
   try {
     const hostname = new URL(SITE_URL).hostname;
     const endpoint =
-      `https://ssl.bing.com/webmaster/api.svc/json/SubmitSitemap` +
-      `?apikey=${BING_API_KEY}`;
+      `https://ssl.bing.com/webmaster/api.svc/pox/SubmitSitemap` +
+      `?apikey=${BING_API_KEY}&siteUrl=${encodeURIComponent(`https://${hostname}`)}&sitemap=${encodeURIComponent(sitemapUrl)}`;
 
     const response = await fetch(endpoint, {
       method: "POST",
