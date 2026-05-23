@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
@@ -15,25 +15,17 @@ interface ServiceOverviewProps {
   service: Service;
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
-    y: 25,
+    y: 30,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
@@ -49,13 +41,10 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      variants={containerVariants}
+      variants={fadeUp}
     >
       {/* Header */}
-      <motion.div
-        variants={fadeUp}
-        className="flex flex-col gap-4"
-      >
+      <div className="flex flex-col gap-4">
         <p
           aria-hidden="true"
           className="text-md text-primary/70 uppercase tracking-normal font-semibold"
@@ -69,27 +58,16 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
         >
           What is {service.title}?
         </h2>
-      </motion.div>
+      </div>
 
       {/* Content */}
-      <motion.div
-        variants={containerVariants}
-        className="flex flex-col gap-6 mt-3"
-      >
-        <motion.p
-          variants={fadeUp}
-          className="text-md text-justify font-normal tracking-normal text-muted-foreground leading-6"
-        >
+      <div className="flex flex-col gap-6 mt-3">
+        <p className="text-md text-justify font-normal tracking-normal text-muted-foreground leading-6">
           {service.overview}
-        </motion.p>
+        </p>
 
         {/* CTA */}
-        <motion.div
-          variants={fadeUp}
-          whileHover={{ x: 5 }}
-          whileTap={{ scale: 0.97 }}
-          className="flex items-center gap-4 pt-2"
-        >
+        <div className="flex items-center gap-4 pt-2">
           <Link
             href={service.cta.href}
             className={buttonVariants({
@@ -100,20 +78,10 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
           >
             {service.cta.label}
 
-            <motion.div
-              animate={{
-                x: [0, 4, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-              }}
-            >
-              <HugeiconsIcon icon={ArrowRight01FreeIcons} />
-            </motion.div>
+            <HugeiconsIcon icon={ArrowRight01FreeIcons} />
           </Link>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </motion.section>
   );
 };

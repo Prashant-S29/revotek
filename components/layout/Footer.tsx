@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { Separator } from "@/components/ui/separator";
 import { buttonVariants } from "@/components/ui/button";
@@ -49,16 +49,7 @@ const data = {
   },
 };
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -67,7 +58,8 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
@@ -88,17 +80,17 @@ export const Footer: React.FC = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
-      variants={containerVariants}
+      variants={fadeUp}
     >
       <div className="pt-16 pb-10">
-        <motion.div
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-12"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-12">
+
           {/* Company */}
-          <motion.div variants={fadeUp} className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <Link href="/" className="w-fit">
-              <h3 className="text-white font-medium">Revotek Elevators</h3>
+              <h3 className="text-white font-medium">
+                Revotek Elevators
+              </h3>
             </Link>
 
             <p className="text-sm leading-relaxed text-white/60">
@@ -107,7 +99,7 @@ export const Footer: React.FC = () => {
 
             <ul className="flex gap-3">
               {Object.entries(data.socials).map(([platform, href]) => (
-                <motion.li key={platform} whileHover={{ scale: 1.1, y: -3 }}>
+                <li key={platform}>
                   <Link
                     href={href}
                     target="_blank"
@@ -122,15 +114,16 @@ export const Footer: React.FC = () => {
                   >
                     <SocialIcon platform={platform} />
                   </Link>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
           {/* Support */}
-          <motion.div variants={fadeUp} className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <h3 className="text-white font-medium">Support</h3>
-            <ul className="flex flex-col gap-5 list-none p-0 m-0" role="list">
+
+            <ul className="flex flex-col gap-5 list-none p-0 m-0">
               <li>
                 <Link
                   href={`https://maps.google.com/?q=${encodeURIComponent(
@@ -139,7 +132,6 @@ export const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-sm text-white/60 hover:text-white transition-colors duration-200"
-                  aria-label="View office location on map"
                 >
                   <span>
                     {data.contact.address.streetAddress},{" "}
@@ -158,9 +150,9 @@ export const Footer: React.FC = () => {
                         icon={Mail01Icon}
                         className="w-4 h-4 text-white flex-shrink-0"
                       />
+
                       <Link
                         href={`mailto:${email}`}
-                        aria-describedby={`Send email to ${email}`}
                         className="text-sm text-white/60 hover:text-white transition-colors duration-200"
                       >
                         {email}
@@ -170,17 +162,15 @@ export const Footer: React.FC = () => {
                 </ul>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* Contact */}
-          <motion.div variants={fadeUp} className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <h3 className="text-white font-medium">Contact</h3>
-            <ul className="flex flex-col gap-5 list-none p-0 m-0" role="list">
+
+            <ul className="flex flex-col gap-5 list-none p-0 m-0">
               <li className="flex items-start gap-3">
-                <ul
-                  className="list-none p-0 m-0"
-                  aria-label="Area-wise contact numbers"
-                >
+                <ul className="list-none p-0 m-0">
                   {data.contact.phones.map((phone) => (
                     <li
                       key={phone.href}
@@ -190,10 +180,12 @@ export const Footer: React.FC = () => {
                         icon={Call02Icon}
                         className="w-4 h-4 text-white flex-shrink-0"
                       />
+
                       <div>
                         <span className="text-xs text-white block mb-0.5">
                           {phone.area} — {phone.name}
                         </span>
+
                         <a
                           href={phone.href}
                           className="text-sm text-white/60 hover:text-white transition-colors duration-200"
@@ -206,14 +198,10 @@ export const Footer: React.FC = () => {
                 </ul>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* Map */}
-          <motion.div
-            variants={fadeUp}
-            whileHover={{ scale: 1.02 }}
-            className="h-52 md:h-full min-h-52 rounded-xl overflow-hidden"
-          >
+          <div className="h-52 md:h-full min-h-52 rounded-xl overflow-hidden">
             <iframe
               src={data.map.src}
               width="100%"
@@ -223,15 +211,17 @@ export const Footer: React.FC = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-          </motion.div>
-        </motion.div>
+          </div>
+
+        </div>
       </div>
 
       <Separator className="bg-accent-foreground" />
 
       {/* Bottom Footer */}
-      <motion.div variants={fadeUp} className="py-6">
+      <div className="py-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+
           <p className="text-sm text-white/60 text-center sm:text-left">
             © {data.copyright.year}, All rights reserved by{" "}
             <span className="text-white font-medium">
@@ -240,21 +230,29 @@ export const Footer: React.FC = () => {
           </p>
 
           <nav>
-            <ul className="flex flex-wrap gap-1">
-              {data.quickLinks.map((link) => (
-                <motion.li key={link.href} whileHover={{ x: 4 }}>
+            <ul className="flex flex-wrap items-center">
+              {data.quickLinks.map((link, index) => (
+                <li
+                  key={link.href}
+                  className="flex items-center"
+                >
                   <Link
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white px-2 py-1"
                   >
                     {link.label}
                   </Link>
-                </motion.li>
+
+                  {index !== data.quickLinks.length - 1 && (
+                    <span className="w-px h-4 bg-white/20 mx-1" />
+                  )}
+                </li>
               ))}
             </ul>
           </nav>
+
         </div>
-      </motion.div>
+      </div>
     </motion.footer>
   );
 };

@@ -15,6 +15,8 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "About Us",
+  
+  // edit this 
   description:
     "Learn about Revotek Elevators — a professional elevator installation, maintenance, and repair company based in Gujarat, Gujarat. Serving residential, commercial, and industrial clients across India.",
   path: "/about",

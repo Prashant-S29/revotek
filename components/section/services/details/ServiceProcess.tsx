@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import { servicesPageContent } from "@/content/services.json";
 
@@ -10,16 +10,7 @@ interface ServiceProcessProps {
   service: Service;
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -28,7 +19,8 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
@@ -44,13 +36,10 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
-      variants={containerVariants}
+      variants={fadeUp}
     >
       {/* Header */}
-      <motion.div
-        variants={fadeUp}
-        className="mb-14 md:max-w-2xl mx-auto text-center"
-      >
+      <div className="mb-14 md:max-w-2xl mx-auto text-center">
         <p
           aria-hidden="true"
           className="text-md text-primary/70 uppercase tracking-normal font-semibold mb-3"
@@ -69,36 +58,27 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({
           A structured, transparent process from first contact to final
           handover so you always know what to expect.
         </p>
-      </motion.div>
+      </div>
 
       {/* Process Cards */}
-      <motion.ol
-        variants={containerVariants}
+      <ol
         className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-white gap-px"
         aria-label={`${service.title} process steps`}
       >
         {service.process.map((step, index) => (
-          <motion.li
+          <li
             key={index}
-            variants={fadeUp}
-            whileHover={{
-              transition: { duration: 0.2 },
-            }}
-            className="bg-gray-100 px-5 py-8 cursor-pointer"
+            className="bg-gray-100 px-5 py-8"
           >
             {/* Step Number */}
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-                rotate: 8,
-              }}
+            <div
               className="w-12 h-12 rounded-xl bg-brand-primary/15 flex items-center justify-center"
               aria-hidden="true"
             >
               <span className="text-brand-primary text-xl font-bold">
                 {index + 1}
               </span>
-            </motion.div>
+            </div>
 
             {/* Title */}
             <h3 className="text-lg font-semibold mt-8 text-primary leading-snug min-h-[3rem] flex items-center">
@@ -109,9 +89,9 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({
             <p className="text-md text-muted-foreground mt-2">
               {step.description}
             </p>
-          </motion.li>
+          </li>
         ))}
-      </motion.ol>
+      </ol>
     </motion.section>
   );
 };

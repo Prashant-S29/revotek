@@ -33,46 +33,33 @@ export const Hero: React.FC = () => {
         className="absolute top-0 left-0 w-full h-full object-cover select-none sm:rounded-br-[50px] md:rounded-br-[100px]"
       />
 
+      {/* Single Block Animation */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
         className="relative z-10 px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 md:max-w-2xl lg:max-w-3xl xl:max-w-4xl"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-md text-primary/70 uppercase tracking-normal font-semibold"
-          aria-hidden="true"
-        >
+        <p className="text-md text-primary/70 uppercase tracking-normal font-semibold">
           {hero.badgeTitle}
-        </motion.p>
+        </p>
 
-        <motion.h1
+        <h1
           id="hero-heading"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
           className="mb-3 mt-3 text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
         >
           {hero.heading}
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-md font-normal tracking-normal text-muted-foreground leading-6"
-        >
+        <p className="text-md font-normal tracking-normal text-muted-foreground leading-6">
           {hero.description}
-        </motion.p>
+        </p>
 
-        <motion.nav
+        <nav
           aria-label="Hero call to action"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-3 mt-6"
         >
           {hero.ctas.map((cta, index) => {
@@ -101,7 +88,7 @@ export const Hero: React.FC = () => {
               </Link>
             );
           })}
-        </motion.nav>
+        </nav>
       </motion.div>
     </section>
   );

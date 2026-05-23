@@ -4,57 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { homePageContent } from "@/content/home.json";
 
-const fadeLeft = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const fadeRight = {
-  hidden: {
-    opacity: 0,
-    x: 50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 25,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export const WhyChooseUs: React.FC = () => {
   const { whyChooseUs } = homePageContent;
 
@@ -64,13 +13,15 @@ export const WhyChooseUs: React.FC = () => {
       aria-labelledby="why-choose-heading"
       className="overflow-hidden px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 gap-14 flex flex-col lg:flex-row bg-gray-100"
     >
-      {/* Image */}
+      {/* Image Block Animation */}
       <motion.div
-        variants={fadeLeft}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        whileHover={{ scale: 1.01, transition: { duration: 0.4 } }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
       >
         <Image
           src={whyChooseUs.assets_bannerImage.src}
@@ -82,55 +33,38 @@ export const WhyChooseUs: React.FC = () => {
         />
       </motion.div>
 
-      {/* Content */}
+      {/* Content Block Animation */}
       <motion.div
-        variants={fadeRight}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
         className="pb-15 lg:py-25"
       >
-        <motion.p
-          variants={fadeUp}
-          className="text-md text-primary/70 uppercase tracking-normal font-semibold"
-        >
+        <p className="text-md text-primary/70 uppercase tracking-normal font-semibold">
           {whyChooseUs.badgeTitle}
-        </motion.p>
+        </p>
 
-        <motion.h2
-          variants={fadeUp}
+        <h2
           id="why-choose-heading"
           className="mb-3 mt-3 text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
         >
           {whyChooseUs.heading}
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          variants={fadeUp}
-          className="mt-2 md:text-sm lg:text-md font-normal tracking-normal text-muted-foreground leading-6"
-        >
+        <p className="mt-2 md:text-sm lg:text-md font-normal tracking-normal text-muted-foreground leading-6">
           {whyChooseUs.description}
-        </motion.p>
+        </p>
 
-        {/* Feature items */}
-        <motion.ul
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <ul
           className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8 list-none p-0"
           aria-label="Reasons to choose us"
         >
           {whyChooseUs.items.map((item, index) => (
-            <motion.li
-              key={index}
-              variants={fadeUp}
-              whileHover={{
-                y: -5,
-                transition: { duration: 0.2 },
-              }}
-              className="cursor-pointer"
-            >
+            <li key={index}>
               <h3 className="md:text-sm lg:text-lg font-semibold mb-1 pb-1 border-b-2 border-gray-300">
                 {item.title}
               </h3>
@@ -138,9 +72,9 @@ export const WhyChooseUs: React.FC = () => {
               <p className="text-muted-foreground md:text-sm lg:text-md mt-1">
                 {item.description}
               </p>
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
       </motion.div>
     </section>
   );

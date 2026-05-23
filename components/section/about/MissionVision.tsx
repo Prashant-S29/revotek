@@ -3,48 +3,6 @@
 import { motion } from "framer-motion";
 import { aboutUsPageContent } from "@/content/about.json";
 
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
-const fadeLeft = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const fadeRight = {
-  hidden: {
-    opacity: 0,
-    x: 50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
 export const MissionVision: React.FC = () => {
   const { missionVision } = aboutUsPageContent;
 
@@ -52,16 +10,19 @@ export const MissionVision: React.FC = () => {
     <section
       id="about-mission-vision"
       aria-labelledby="mission-vision-heading"
-      className="w-full py-15 lg:py-25 px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 bg-gray-100"
+      className="w-full py-15 lg:py-25 px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 bg-gray-100 overflow-hidden"
     >
       <div>
 
-        {/* Header */}
+        {/* Header Block Animation */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
           className="mb-12 text-center"
         >
           <p
@@ -82,24 +43,23 @@ export const MissionVision: React.FC = () => {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden rounded-tl-[60px] rounded-br-[60px]">
 
-          {/* Mission */}
+          {/* Mission Block Animation */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeLeft}
-            className="bg-white px-5 py-8 sm:px-10 sm:py-14 flex flex-col gap-6 cursor-pointer"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            className="bg-white px-5 py-8 sm:px-10 sm:py-14 flex flex-col gap-6"
           >
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-                rotate: 10,
-              }}
+            <div
               aria-hidden="true"
               className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
             >
               <div className="w-5 h-5 rounded-full bg-primary" />
-            </motion.div>
+            </div>
 
             <h3 className="text-2xl font-bold text-primary">
               {missionVision.mission.heading}
@@ -110,24 +70,23 @@ export const MissionVision: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Vision */}
+          {/* Vision Block Animation */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeRight}
-            className="bg-primary px-5 py-8 sm:px-10 sm:py-14 flex flex-col gap-6 cursor-pointer"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            className="bg-primary px-5 py-8 sm:px-10 sm:py-14 flex flex-col gap-6"
           >
-            <motion.div
-              whileHover={{
-                scale: 1.1,
-                rotate: -10,
-              }}
+            <div
               aria-hidden="true"
               className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"
             >
               <div className="w-5 h-5 rounded-full bg-white" />
-            </motion.div>
+            </div>
 
             <h3 className="text-2xl font-semibold text-white">
               {missionVision.vision.heading}
