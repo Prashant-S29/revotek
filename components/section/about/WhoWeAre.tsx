@@ -5,57 +5,6 @@ import { motion } from "framer-motion";
 
 import { aboutUsPageContent } from "@/content/about.json";
 
-const fadeLeft = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const fadeRight = {
-  hidden: {
-    opacity: 0,
-    x: 50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 25,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export const WhoWeAre: React.FC = () => {
   const { whoWeAre } = aboutUsPageContent;
 
@@ -67,13 +16,15 @@ export const WhoWeAre: React.FC = () => {
     >
       <div className="w-full flex flex-col lg:flex-row lg:gap-20 gap-10">
 
-        {/* Image */}
+        {/* Image Block Animation */}
         <motion.div
-          variants={fadeLeft}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          whileHover={{ scale: 1.01, transition: { duration: 0.4 } }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
           className="relative lg:w-300 lg:h-auto h-80 sm:h-100 w-full overflow-hidden rounded-3xl"
         >
           <Image
@@ -85,36 +36,34 @@ export const WhoWeAre: React.FC = () => {
           />
         </motion.div>
 
-        {/* Content */}
+        {/* Content Block Animation */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
           className="flex flex-col justify-center w-full lg:max-w-3xl"
         >
-          <motion.h2
-            variants={fadeRight}
+          <h2
             id="who-we-are-heading"
             className="text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
           >
             {whoWeAre.heading}
-          </motion.h2>
+          </h2>
 
-          <motion.div
-            variants={containerVariants}
-            className="flex flex-col gap-5 mt-5"
-          >
+          <div className="flex flex-col gap-5 mt-5">
             {whoWeAre.paragraphs.map((para, index) => (
-              <motion.p
+              <p
                 key={index}
-                variants={fadeUp}
                 className="text-base text-muted-foreground leading-relaxed"
               >
                 {para}
-              </motion.p>
+              </p>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
 
       </div>

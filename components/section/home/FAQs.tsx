@@ -11,29 +11,6 @@ import {
 
 import { homePageContent } from "@/content/home.json";
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export const FAQs: React.FC = () => {
   const { faq } = homePageContent;
 
@@ -42,16 +19,16 @@ export const FAQs: React.FC = () => {
       id="home-faqs"
       aria-labelledby="faq-heading"
       className="px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-15 sm:py-20 lg:py-25 bg-gray-100 overflow-hidden"
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
-      variants={containerVariants}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+      }}
     >
       {/* Header */}
-      <motion.div
-        variants={fadeUp}
-        className="text-center md:max-w-3xl mx-auto"
-      >
+      <div className="text-center md:max-w-3xl mx-auto">
         <p className="text-md text-primary/70 uppercase tracking-normal font-semibold">
           {faq.badgeTitle}
         </p>
@@ -66,26 +43,16 @@ export const FAQs: React.FC = () => {
         <p className="mt-4 md:text-sm lg:text-md font-normal tracking-normal text-muted-foreground leading-6">
           {faq.description}
         </p>
-      </motion.div>
+      </div>
 
       {/* FAQ Items */}
-      <motion.div
-        variants={containerVariants}
-        className="mt-8 md:mt-12"
-      >
+      <div className="mt-8 md:mt-12">
         <Accordion
           multiple
           className="max-w-4xl border-none mx-auto flex flex-col gap-3"
         >
           {faq.items.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              whileHover={{
-                y: -2,
-                transition: { duration: 0.2 },
-              }}
-            >
+            <div key={index}>
               <AccordionItem
                 value={`faq-item-${index}`}
                 className="bg-white data-open:bg-white rounded-2xl px-0 sm:px-3 md:px-6 shadow-none border-none"
@@ -98,10 +65,10 @@ export const FAQs: React.FC = () => {
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
-            </motion.div>
+            </div>
           ))}
         </Accordion>
-      </motion.div>
+      </div>
     </motion.section>
   );
 };

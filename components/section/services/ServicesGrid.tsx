@@ -10,48 +10,18 @@ import { servicesPageContent } from "@/content/services.json";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 30,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
-
 export const ServicesGrid: React.FC = () => {
   const { servicesGrid } = servicesPageContent;
   const { servicesOverview } = homePageContent;
 
   return (
-    <motion.section
+    <section
       id="services-grid"
       aria-labelledby="services-grid-heading"
-      className="w-full px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-15 lg:py-25"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      variants={containerVariants}
+      className="w-full px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-15 lg:py-25 overflow-hidden"
     >
-      {/* Header */}
-      <motion.div
-        variants={fadeUp}
-        className="mb-14 md:max-w-3xl"
-      >
+      {/* Header - No Animation */}
+      <div className="mb-14 md:max-w-3xl">
         <h2
           id="services-grid-heading"
           className="text-3xl sm:text-4xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
@@ -62,27 +32,26 @@ export const ServicesGrid: React.FC = () => {
         <p className="mt-4 text-md font-normal tracking-normal text-muted-foreground leading-6 max-w-3xl">
           {servicesGrid.description}
         </p>
-      </motion.div>
+      </div>
 
-      {/* Cards */}
+      {/* Grid Animation Only */}
       <motion.div
-        variants={containerVariants}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100 border"
       >
         {servicesOverview.services.map((service, index) => (
-          <motion.article
+          <article
             key={index}
-            variants={fadeUp}
-            whileHover={{
-              transition: { duration: 0.2 },
-            }}
-            className="group bg-white flex flex-col overflow-hidden p-6 cursor-pointer"
+            className="bg-white flex flex-col overflow-hidden p-6"
           >
             {/* Image */}
-            <motion.div
-              whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-              className="relative w-full h-60 rounded-xl overflow-hidden"
-            >
+            <div className="relative w-full h-60 rounded-xl overflow-hidden">
               <Image
                 src={service.assets_bannerImage.src}
                 alt={service.assets_bannerImage.alt}
@@ -90,12 +59,7 @@ export const ServicesGrid: React.FC = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500"
-              />
-            </motion.div>
+            </div>
 
             {/* Content */}
             <div className="flex flex-col flex-1 gap-4 py-6 px-1">
@@ -108,10 +72,7 @@ export const ServicesGrid: React.FC = () => {
               </p>
 
               {/* Button */}
-              <motion.div
-                whileHover={{ x: 5 }}
-                whileTap={{ scale: 0.97 }}
-              >
+              <div>
                 <Link
                   href={service.cta.href}
                   className={cn(
@@ -125,11 +86,11 @@ export const ServicesGrid: React.FC = () => {
                 >
                   {service.cta.label}
                 </Link>
-              </motion.div>
+              </div>
             </div>
-          </motion.article>
+          </article>
         ))}
       </motion.div>
-    </motion.section>
+    </section>
   );
 };

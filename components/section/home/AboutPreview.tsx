@@ -11,57 +11,6 @@ import { cn } from "@/lib/utils";
 import { CircleArrowRight02Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 
-const fadeLeft = {
-  hidden: {
-    opacity: 0,
-    x: -50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const fadeRight = {
-  hidden: {
-    opacity: 0,
-    x: 50,
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.7,
-    },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 export const AboutPreview: React.FC = () => {
   const { aboutPreview } = homePageContent;
 
@@ -71,50 +20,40 @@ export const AboutPreview: React.FC = () => {
       aria-labelledby="about-preview-heading"
       className="px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 overflow-hidden py-15 lg:py-25 gap-14 lg:gap-20 flex flex-col-reverse lg:flex-row"
     >
-      {/* Content */}
+      {/* Content Block Animation */}
       <motion.div
-        variants={fadeLeft}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
       >
-        <motion.p
-          variants={fadeUp}
-          className="text-md text-primary/70 uppercase tracking-normal font-semibold"
-        >
+        <p className="text-md text-primary/70 uppercase tracking-normal font-semibold">
           {aboutPreview.badgeTitle}
-        </motion.p>
+        </p>
 
-        <motion.h2
-          variants={fadeUp}
+        <h2
           id="about-preview-heading"
           className="mb-3 mt-3 text-3xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
         >
           {aboutPreview.heading}
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          variants={fadeUp}
-          className="lg:text-md md:text-sm font-normal tracking-normal text-muted-foreground leading-6"
-        >
+        <p className="lg:text-md md:text-sm font-normal tracking-normal text-muted-foreground leading-6">
           {aboutPreview.description}
-        </motion.p>
+        </p>
 
         {/* Highlights */}
-        <motion.ul
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <ul
           className="flex flex-col mt-5 space-y-2"
           aria-label="Highlights"
         >
           {aboutPreview.highlights.map((highlight, index) => (
-            <motion.li
+            <li
               key={index}
-              variants={fadeUp}
-              whileHover={{ x: 8 }}
-              className="flex items-center gap-2 cursor-pointer"
+              className="flex items-center gap-2"
             >
               <HugeiconsIcon
                 icon={CircleArrowRight02Icon}
@@ -124,16 +63,12 @@ export const AboutPreview: React.FC = () => {
               <span className="lg:text-md md:text-sm font-normal tracking-normal text-black leading-6">
                 {highlight}
               </span>
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
 
         {/* CTA */}
-        <motion.div
-          variants={fadeUp}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-        >
+        <div>
           <Link
             href={aboutPreview.cta.link}
             className={cn(
@@ -146,16 +81,18 @@ export const AboutPreview: React.FC = () => {
           >
             {aboutPreview.cta.label}
           </Link>
-        </motion.div>
+        </div>
       </motion.div>
 
-      {/* Image */}
+      {/* Image Block Animation */}
       <motion.div
-        variants={fadeRight}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
-        whileHover={{ scale: 1.01, transition: { duration: 0.4 } }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
         className="relative w-full h-80 md:h-100 lg:w-100 xl:w-125 lg:h-auto shrink-0"
       >
         <Image
