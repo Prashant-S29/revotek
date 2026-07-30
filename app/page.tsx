@@ -10,6 +10,7 @@ import {
   Hero,
   IndustriesWeServe,
   ServicesOverview,
+  Testimonials,
   WhyChooseUs,
 } from "@/components/section/home";
 import { FAQs } from "@/components/section/home/FAQs";
@@ -47,6 +48,7 @@ const Home: React.FC = () => {
         <AboutPreview />
         <ServicesOverview />
         <IndustriesWeServe />
+        <Testimonials />
         <FAQs />
         <ContactBanner />
       </main>

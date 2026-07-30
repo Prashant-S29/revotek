@@ -191,6 +191,34 @@
         }
       ]
     },
+    "testimonials": {
+      "badgeTitle": "Customer Testimonials",
+      "heading": "What Our Customers Say",
+      "description": "Property owners and building managers trust Revotek Elevators for responsive support, careful workmanship, and reliable elevator performance.",
+      "items": [
+        {
+          "rating": 5,
+          "quote": "The installation was planned clearly and completed with close attention to safety. The team kept us informed throughout the entire project.",
+          "name": "Residential Client",
+          "location": "Ahmedabad",
+          "service": "Passenger Elevator Installation"
+        },
+        {
+          "rating": 5,
+          "quote": "Their technicians respond quickly and explain every maintenance issue in simple terms. Our elevator has been running smoothly with regular service.",
+          "name": "Housing Society Committee",
+          "location": "Gujarat",
+          "service": "Annual Maintenance Contract"
+        },
+        {
+          "rating": 5,
+          "quote": "Professional service, dependable coordination, and quality repair work. Revotek helped us reduce downtime and restore safe elevator operation.",
+          "name": "Commercial Property Manager",
+          "location": "Ahmedabad",
+          "service": "Elevator Repair & Maintenance"
+        }
+      ]
+    },
     "faq": {
       "badgeTitle": "Frequently Asked Questions",
       "heading": "Common Questions About Elevator Services",
