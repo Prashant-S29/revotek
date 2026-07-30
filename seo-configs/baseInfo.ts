@@ -22,10 +22,10 @@ export const baseInfo = {
   },
   phones: [
     {
-      area: "Gandhinagar",
-      name: "Sunil Vadan",
-      label: "+91 84012 54119",
-      href: "tel:+918401254119",
+      area: "Old Ahmedabad",
+      name: "Dilip Varlekar",
+      label: "+91 92659 99898",
+      href: "tel:+919265999898",
     },
     {
       area: "New Ahmedabad",
@@ -34,10 +34,10 @@ export const baseInfo = {
       href: "tel:+918511376037",
     },
     {
-      area: "Old Ahmedabad",
-      name: "Dilip Varlekar",
-      label: "+91 92659 99898",
-      href: "tel:+919265999898",
+      area: "Gandhinagar",
+      name: "Sunil Vadan",
+      label: "+91 84012 54119",
+      href: "tel:+918401254119",
     },
   ],
 

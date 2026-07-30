@@ -18,10 +18,11 @@ export const AboutPreview: React.FC = () => {
     <section
       id="home-aboutPreview"
       aria-labelledby="about-preview-heading"
-      className="px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 overflow-hidden py-15 lg:py-25 gap-14 lg:gap-20 flex flex-col-reverse lg:flex-row"
+      className="px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 overflow-hidden py-15 lg:py-25 gap-10 sm:gap-14 lg:gap-12 xl:gap-20 flex flex-col-reverse lg:flex-row"
     >
       {/* Content Block Animation */}
       <motion.div
+        className="w-full min-w-0 lg:flex-1"
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -36,7 +37,7 @@ export const AboutPreview: React.FC = () => {
 
         <h2
           id="about-preview-heading"
-          className="mb-3 mt-3 text-3xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
+          className="mb-3 mt-3 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-brand-primary"
         >
           {aboutPreview.heading}
         </h2>
@@ -93,13 +94,14 @@ export const AboutPreview: React.FC = () => {
           duration: 0.8,
           ease: "easeOut",
         }}
-        className="relative w-full h-80 md:h-100 lg:w-100 xl:w-125 lg:h-auto shrink-0"
+        className="relative w-full h-64 sm:h-80 md:h-100 lg:w-100 xl:w-125 lg:h-auto shrink-0"
       >
         <Image
           src={aboutPreview.assets_bannerImage.src}
           alt={aboutPreview.assets_bannerImage.alt}
           fill
-          sizes="(max-width: 768px) 100vw, 500px"
+          loading="eager"
+          sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 400px, 500px"
           className="object-cover rounded-xl"
         />
       </motion.div>
