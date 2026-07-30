@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
   return (
     <header
       className={`
-        w-full top-0 fixed z-50 flex justify-between px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-3 items-center transition-[background-color,border-color] duration-300
+        w-full top-0 fixed z-50 bg-white flex justify-between px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 py-3 items-center transition-[background-color,border-color] duration-300
         ${scrolled ? "border-b border-gray-200  bg-white" : "border-b border-transparent  bg-transparent"}
       `}
       role="banner"
