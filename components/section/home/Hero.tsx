@@ -158,6 +158,29 @@ export const Hero: React.FC = () => {
               );
             })}
           </nav>
+
+          <dl
+            aria-label="Customer statistics"
+            className="mt-8 flex w-fit items-center rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4"
+          >
+            {hero.customerStats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={
+                  index === 0
+                    ? "pr-5 sm:pr-8"
+                    : "border-l border-white/15 pl-5 sm:pl-8"
+                }
+              >
+                <dd className="text-2xl font-bold leading-none text-brand-primary sm:text-3xl">
+                  {stat.value}
+                </dd>
+                <dt className="mt-2 text-xs font-medium text-white/65 sm:text-sm">
+                  {stat.label}
+                </dt>
+              </div>
+            ))}
+          </dl>
         </motion.div>
 
         {/* Right column: auto-changing image slider */}

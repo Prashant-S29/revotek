@@ -20,6 +20,16 @@
           "label": "Download Product Brochure",
           "icon": "download"
         }
+      ],
+      "customerStats": [
+        {
+          "label": "Total Customers",
+          "value": 576
+        },
+        {
+          "label": "Successful Customers",
+          "value": 547
+        }
       ]
     },
     "whyChooseUs": {
