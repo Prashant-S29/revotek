@@ -99,8 +99,13 @@ export const Hero: React.FC = () => {
     <section
       id="home-hero"
       aria-labelledby="hero-heading"
-      className="relative w-full flex items-center justify-center min-h-screen py-20 lg:py-25  bg-slate-950"
+      className="relative w-full flex items-center justify-center min-h-screen overflow-hidden bg-slate-950 py-20 lg:py-25"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_75%_at_85%_0%,rgba(30,64,175,0.38)_0%,rgba(15,42,100,0.28)_42%,rgba(2,6,23,0)_78%)]"
+      />
+
       <div className="relative z-10 w-full px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mt-25">
         {/* Left column: existing text content */}
         <motion.div
