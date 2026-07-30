@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import type { VariantProps } from "class-variance-authority";
 import { homePageContent } from "@/content/home.json";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -13,6 +14,10 @@ import { HugeiconsIcon } from "@hugeicons/react";
 const iconMap = {
   download: DownloadIcon,
 };
+
+type ButtonVariant = NonNullable<
+  VariantProps<typeof buttonVariants>["variant"]
+>;
 
 const heroSlides = [
   {
@@ -130,7 +135,7 @@ export const Hero: React.FC = () => {
               const isDownload = cta.link.endsWith(".pdf");
 
               const sharedClassName = buttonVariants({
-                variant: cta.variant as keyof typeof buttonVariants,
+                variant: cta.variant as ButtonVariant,
                 size: "xl",
                 className: "w-fit md:w-auto",
               });
