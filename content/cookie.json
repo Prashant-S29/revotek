@@ -1,0 +1,83 @@
+{
+  "cookiePolicyPageContent": {
+    "hero": {
+      "heading": "Cookie Policy",
+      "description": "Learn how Revotek Elevators uses cookies to improve your browsing experience, enhance website performance, and provide secure, reliable services."
+    },
+    "lastUpdated": "July 31, 2026",
+    "sections": [
+      {
+        "title": "What Are Cookies?",
+        "content": [
+          "Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences, improve functionality, and enhance your browsing experience.",
+          "These cookies do not typically contain personally identifiable information but may be linked to information you voluntarily provide while using our website."
+        ]
+      },
+      {
+        "title": "Why We Use Cookies",
+        "content": [
+          "Revotek Elevators uses cookies to provide a better user experience, improve website functionality, and understand how visitors interact with our website.",
+          "Cookies also help us maintain website security, remember your preferences, and optimize overall website performance."
+        ]
+      },
+      {
+        "title": "Types of Cookies We Use",
+        "items": [
+          {
+            "title": "Essential Cookies",
+            "description": "Required for the website to function properly, including navigation, security, and accessibility features."
+          },
+          {
+            "title": "Performance & Analytics Cookies",
+            "description": "Help us understand visitor behavior, website traffic, and overall performance so we can continuously improve our website."
+          },
+          {
+            "title": "Functional Cookies",
+            "description": "Remember your preferences, such as language settings or previously entered information, to provide a personalized experience."
+          },
+          {
+            "title": "Marketing Cookies",
+            "description": "Currently, Revotek Elevators does not use marketing or advertising cookies. This policy will be updated if such cookies are introduced in the future."
+          }
+        ]
+      },
+      {
+        "title": "Third-Party Cookies",
+        "content": [
+          "Some features on our website may rely on trusted third-party services such as maps, analytics, embedded videos, or other tools. These providers may place their own cookies on your device.",
+          "We recommend reviewing their respective privacy and cookie policies for more information."
+        ]
+      },
+      {
+        "title": "Managing Cookies",
+        "content": [
+          "You can control or delete cookies through your browser settings at any time.",
+          "Most browsers allow you to view stored cookies, remove existing cookies, block future cookies, or receive notifications before cookies are stored.",
+          "Please note that disabling certain cookies may affect some website features and functionality."
+        ]
+      },
+      {
+        "title": "Your Consent",
+        "content": [
+          "When you first visit our website, you will be asked to accept or reject optional cookies through our cookie consent banner.",
+          "Your choice will be saved and can be updated by clearing your browser cookies or changing your browser settings."
+        ]
+      },
+      {
+        "title": "Changes to This Cookie Policy",
+        "content": [
+          "Revotek Elevators may update this Cookie Policy from time to time to reflect changes in legal requirements, technology, or our business practices.",
+          "Any updates will be published on this page along with the revised 'Last Updated' date."
+        ]
+      }
+    ],
+    "contact": {
+      "heading": "Contact Us",
+      "description": "If you have any questions about this Cookie Policy or how we use cookies, please contact us.",
+      "company": "Revotek Elevators",
+      "address": "Ahmedabad, Gujarat, India",
+      "email": "info@revotekelevators.com",
+      "phone": "+91 92659 99898"
+    }
+  }
+}
