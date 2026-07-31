@@ -37,7 +37,7 @@
       "heading": "Excellent support with best in class services",
       "description": "We combine advanced engineering, genuine parts, and dedicated support to deliver seamless and long-lasting elevator performance.",
       "assets_bannerImage": {
-        "src": "/assets/home/why-choose.webp",
+        "src": "/assets/home/why-choose-us.webp",
         "alt": "Why Choose Us banner image"
       },
       "items": [
@@ -64,7 +64,7 @@
       "heading": "Reliable Elevator Installation & Maintenance Services in Gujarat",
       "description": "Revotek Elevators is a professional elevator service company based in Ahmedabad, Gujarat, offering reliable installation, maintenance, and repair solutions for residential, commercial, and industrial buildings. We focus on delivering safe, efficient, and long-lasting elevator systems tailored to modern infrastructure needs.",
       "assets_bannerImage": {
-        "src": "/assets/home/aboutus-preview.webp",
+        "src": "/assets/home/about-us-preview.webp",
         "alt": "about us preview image"
       },
       "highlights": [
@@ -73,7 +73,7 @@
         "Focus on safety, performance, and long-term reliability"
       ],
       "cta": {
-        "label": "Learn More About Us",
+        "label": "Read More About Us",
         "link": "/about"
       }
     },
@@ -86,7 +86,7 @@
           "title": "Elevator Installation",
           "description": "Professional installation of passenger, goods, home, and commercial elevators with complete setup, testing, and commissioning.",
           "cta": {
-            "label": "Learn more",
+            "label": "Read more",
             "href": "/services/elevator-installation"
           },
           "assets_bannerImage": {
@@ -98,7 +98,7 @@
           "title": "Elevator Maintenance",
           "description": "Regular maintenance services to ensure smooth operation, reduce breakdowns, and extend the life of your elevator systems.",
           "cta": {
-            "label": "Learn more",
+            "label": "Read more",
             "href": "/services/elevator-maintenance"
           },
           "assets_bannerImage": {
@@ -110,7 +110,7 @@
           "title": "Elevator Repair",
           "description": "Fast and reliable repair services for all types of elevators with expert diagnostics and quick issue resolution.",
           "cta": {
-            "label": "Learn more",
+            "label": "Read more",
             "href": "/services/elevator-repair"
           },
           "assets_bannerImage": {
@@ -122,7 +122,7 @@
           "title": "Elevator Modernization",
           "description": "Upgrade outdated elevators with modern technology, improved safety features, and energy-efficient systems.",
           "cta": {
-            "label": "Learn more",
+            "label": "Read more",
             "href": "/services/elevator-modernization"
           },
           "assets_bannerImage": {
@@ -134,7 +134,7 @@
           "title": "Annual Maintenance Contract (AMC)",
           "description": "Flexible AMC plans with scheduled servicing, priority support, and cost-effective long-term maintenance solutions.",
           "cta": {
-            "label": "Learn more",
+            "label": "Read more",
             "href": "/services/amc"
           },
           "assets_bannerImage": {
@@ -146,11 +146,11 @@
           "title": "Elevator Spare Parts Supply",
           "description": "Supply of high-quality elevator spare parts including control panels, motors, ropes, and safety components.",
           "cta": {
-            "label": "Learn more",
+            "label": "Read more",
             "href": "/services/spare-parts"
           },
           "assets_bannerImage": {
-            "src": "/assets/services/spare-part.webp",
+            "src": "/assets/services/spare-part_elevator.webp",
             "alt": "spare-parts"
           }
         }

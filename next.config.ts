@@ -43,11 +43,11 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/(.*)\\.(ico|png|jpg|jpeg|webp|avif|svg|woff2|woff|ttf)",
+        source: "/assets/(.*)\\.(ico|png|jpg|jpeg|webp|avif|svg)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value: "public, max-age=0, must-revalidate",
           },
         ],
       },
