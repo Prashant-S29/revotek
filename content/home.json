@@ -198,24 +198,17 @@
       "items": [
         {
           "rating": 5,
-          "quote": "The installation was planned clearly and completed with close attention to safety. The team kept us informed throughout the entire project.",
-          "name": "Residential Client",
+          "quote": "Great services, definitely recommend. I really loved how they handled the conversation through out the work. Good team to work with.",
+          "name": "Prashant Singh",
           "location": "Ahmedabad",
-          "service": "Passenger Elevator Installation"
+          "service": "Passenger Elevator Repairing"
         },
         {
           "rating": 5,
-          "quote": "Their technicians respond quickly and explain every maintenance issue in simple terms. Our elevator has been running smoothly with regular service.",
-          "name": "Housing Society Committee",
-          "location": "Gujarat",
-          "service": "Annual Maintenance Contract"
-        },
-        {
-          "rating": 5,
-          "quote": "Professional service, dependable coordination, and quality repair work. Revotek helped us reduce downtime and restore safe elevator operation.",
-          "name": "Commercial Property Manager",
+          "quote": "Very satisfied with the service provided by Revotek Elevators. They handled our lift repair smoothly and explained everything clearly. Great support and affordable pricing.",
+          "name": "Amit Jambekar",
           "location": "Ahmedabad",
-          "service": "Elevator Repair & Maintenance"
+          "service": "Residency Elevator Maintanance"
         }
       ]
     },
