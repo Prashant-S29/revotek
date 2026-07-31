@@ -16,7 +16,16 @@ const getPosition = (index: number, active: number, count: number) => {
 };
 
 const Arrow = ({ direction }: { direction: "left" | "right" }) => (
-  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-6">
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={`size-5 transition-transform duration-200 ${
+      direction === "left"
+        ? "group-hover:-translate-x-0.5"
+        : "group-hover:translate-x-0.5"
+    }`}
+  >
     <path
       d={direction === "left" ? "m15 18-6-6 6-6" : "m9 18 6-6-6-6"}
       stroke="currentColor"
@@ -65,7 +74,7 @@ export const Team: React.FC = () => {
             type="button"
             onClick={showPrevious}
             aria-label="Show previous specialist team"
-            className="flex size-10 items-center justify-center rounded-full border border-gray-200 bg-white text-primary shadow-sm transition hover:border-brand-primary hover:text-brand-primary focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
+            className="group flex size-11 items-center justify-center rounded-full border border-brand-primary/25 bg-white text-brand-primary shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-primary hover:bg-brand-primary hover:text-white hover:shadow-md active:translate-y-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
           >
             <Arrow direction="left" />
           </button>
@@ -73,7 +82,7 @@ export const Team: React.FC = () => {
             type="button"
             onClick={showNext}
             aria-label="Show next specialist team"
-            className="flex size-10 items-center justify-center rounded-full bg-brand-primary text-white shadow-sm transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
+            className="group flex size-11 items-center justify-center rounded-full border border-brand-primary bg-brand-primary text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-brand-primary hover:shadow-md active:translate-y-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
           >
             <Arrow direction="right" />
           </button>

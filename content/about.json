@@ -33,53 +33,17 @@
       }
     },
     "team": {
-      "badgeTitle": "Our Team",
-      "heading": "Meet the Specialists Behind Every Safe Ride",
-      "description": "Our elevator engineers, installation experts, maintenance technicians, and support professionals work together to deliver safe, reliable vertical mobility across Ahmedabad and Gujarat.",
+      "badgeTitle": "Our Leadership",
+      "heading": "Meet the People Driving Revotek Elevators",
+      "description": "Our leadership team is committed to delivering safe, innovative, and reliable elevator solutions through technical expertise, quality workmanship, and exceptional customer service.",
       "items": [
         {
-          "title": "Project Engineering",
-          "specialty": "Design & Site Planning",
-          "description": "Our project engineers assess every site, plan the right elevator system, and coordinate each technical detail before installation begins.",
+          "title": "Dilip Varlekar",
+          "specialty": "Founder & CEO",
+          "description": "Dilip Varlekar leads Revotek Elevators with a vision to deliver world-class vertical transportation solutions across Gujarat. With years of industry experience, he focuses on quality, innovation, customer satisfaction, and safety, ensuring every project meets the highest engineering standards.",
           "image": {
-            "src": "/assets/about_01.webp",
-            "alt": "Revotek elevator project engineering and site planning team"
-          }
-        },
-        {
-          "title": "Installation Experts",
-          "specialty": "Elevator Installation",
-          "description": "Trained installation specialists assemble, test, and commission elevator systems with careful workmanship and a safety-first process.",
-          "image": {
-            "src": "/assets/install-details-2.webp",
-            "alt": "Revotek specialists carrying out a professional elevator installation"
-          }
-        },
-        {
-          "title": "Service Technicians",
-          "specialty": "Maintenance & Repair",
-          "description": "Our responsive technicians handle preventive maintenance, diagnostics, and elevator repairs to keep every system running reliably.",
-          "image": {
-            "src": "/assets/repairingservice.webp",
-            "alt": "Revotek elevator service technician performing maintenance and repair"
-          }
-        },
-        {
-          "title": "Modernization Team",
-          "specialty": "Upgrades & Safety",
-          "description": "Modernization specialists improve aging elevators with efficient controls, updated safety systems, and carefully selected components.",
-          "image": {
-            "src": "/assets/mordenize-details.webp",
-            "alt": "Revotek elevator modernization specialists upgrading an existing system"
-          }
-        },
-        {
-          "title": "Customer Support",
-          "specialty": "AMC & Service Coordination",
-          "description": "Our support team coordinates maintenance schedules, service requests, and timely assistance for Revotek customers across Gujarat.",
-          "image": {
-            "src": "/assets/about_02.webp",
-            "alt": "Revotek customer support team coordinating elevator service requests"
+            "src": "/assets/team/dilip-varlekar.webp",
+            "alt": "Dilip Varlekar - Founder & CEO of Revotek Elevators"
           }
         }
       ]
