@@ -65,6 +65,7 @@ const HeroImageSlider: React.FC = () => {
             src={heroSlides[activeIndex].src}
             alt={heroSlides[activeIndex].alt}
             fill
+            loading="eager"
             priority={activeIndex === 0}
             sizes="(min-width: 1024px) 40vw, 90vw"
             className="object-cover"
