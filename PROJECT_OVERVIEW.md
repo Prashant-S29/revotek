@@ -2,6 +2,8 @@
 
 This document is the main technical guide for the Revotek Elevators website. It explains the project architecture, folder structure, coding conventions, content workflow, SEO system, validation process, and ongoing maintenance tasks.
 
+Last repository review: August 1, 2026.
+
 ## 1. Project summary
 
 Revotek Elevators is a content-driven business website built with the Next.js App Router. It presents elevator installation, maintenance, repair, modernization, AMC, and spare-parts services across Ahmedabad, Gujarat, and India.
@@ -60,6 +62,7 @@ revotek-new/
 |   |   `-- revalidate/route.ts  # Protected cache revalidation and IndexNow
 |   |-- about/page.tsx
 |   |-- contact/page.tsx
+|   |-- cookie-policy/page.tsx
 |   |-- privacy-policy/page.tsx
 |   |-- services/
 |   |   |-- page.tsx
@@ -67,6 +70,7 @@ revotek-new/
 |   |-- terms-and-conditions/page.tsx
 |   |-- layout.tsx               # Root metadata, schema, header and footer
 |   |-- page.tsx                 # Home page
+|   |-- not-found.tsx            # Branded 404 page
 |   |-- manifest.ts
 |   |-- opengraph-image.tsx
 |   |-- robots.ts
@@ -80,7 +84,7 @@ revotek-new/
 |   |   |-- home/
 |   |   `-- services/
 |   `-- ui/                      # Reusable low-level UI primitives
-|-- content/                     # Editable JSON page and service content
+|-- content/                     # Editable JSON page, policy and service content
 |-- lib/
 |   |-- indexing/                # IndexNow integration
 |   |-- og/                      # Shared Open Graph template
@@ -103,12 +107,17 @@ revotek-new/
 | `/services` | `app/services/page.tsx` | Static |
 | `/services/[slug]` | `app/services/[slug]/page.tsx` | Static paths from services JSON |
 | `/contact` | `app/contact/page.tsx` | Static page plus contact API |
+| `/cookie-policy` | `app/cookie-policy/page.tsx` | Static policy page |
 | `/privacy-policy` | `app/privacy-policy/page.tsx` | Static |
 | `/terms-and-conditions` | `app/terms-and-conditions/page.tsx` | Static |
 | `/api/contact` | `app/api/contact/route.ts` | Dynamic API |
 | `/api/revalidate` | `app/api/revalidate/route.ts` | Dynamic protected API |
 | `/sitemap.xml` | `app/sitemap.ts` | Generated metadata route |
 | `/robots.txt` | `app/robots.ts` | Generated metadata route |
+| `/manifest.webmanifest` | `app/manifest.ts` | Generated web app manifest |
+| `/opengraph-image` | `app/opengraph-image.tsx` | Generated default social image |
+| `/llms.txt` | `public/llms.txt` | Static LLM-readable site summary |
+| Unmatched routes | `app/not-found.tsx` | Branded 404 response |
 
 ## 6. Coding structure and conventions
 
@@ -184,6 +193,7 @@ px-3 sm:px-6 md:px-10 lg:px-10 xl:px-30 2xl:px-50
 | `content/about.json` | About hero, company content, mission, team, values |
 | `content/services.json` | Service listing and every service detail page |
 | `content/contact.json` | Contact page copy and contact details |
+| `content/cookie.json` | Cookie policy sections and policy contact block |
 | `content/privacy-policy.json` | Privacy policy content |
 | `content/terms-and-conditions.json` | Terms content |
 
@@ -203,7 +213,18 @@ The Team and Testimonials sections are data-count aware:
 - Four or more items enable arrows, dots, keyboard navigation, and carousel semantics.
 - Content can be added or removed in JSON without rewriting the threshold logic.
 
-### 6.6 Adding a new home or About section
+The current content has one team profile and two testimonials, so both sections render as static layouts. The testimonial entries contain a name, Ahmedabad location, service label, five-star rating, and review text. Preserve a verifiable source and permission for every published testimonial.
+
+### 6.6 Cookie consent and policy
+
+- `components/common/cookie-banner.tsx` is mounted globally from `app/layout.tsx`.
+- The banner appears only when the browser has no `revotek-cookie-consent` value in `localStorage`.
+- Accept and Reject store `accepted` or `rejected` respectively, then dismiss the banner.
+- The banner links to the static `/cookie-policy` route, whose editable copy is in `content/cookie.json`.
+- The current implementation records the choice but does not yet conditionally load or block analytics, marketing, maps, videos, or other optional integrations.
+- If optional tracking is introduced, load it only after the appropriate consent and provide a visible way to reopen or change cookie preferences.
+
+### 6.7 Adding a new home or About section
 
 1. Add the content object to `content/home.json` or `content/about.json`.
 2. Create `components/section/<route>/SectionName.tsx`.
@@ -213,7 +234,7 @@ The Team and Testimonials sections are data-count aware:
 6. Add schema only when the visible content qualifies for that schema type.
 7. Run lint, TypeScript, and a production build.
 
-### 6.7 Adding a service
+### 6.8 Adding a service
 
 Add a complete service entry to `content/services.json`. The slug drives:
 
@@ -224,6 +245,8 @@ Add a complete service entry to `content/services.json`. The slug drives:
 - The service entry in `app/sitemap.ts`.
 
 Every service must have a unique slug, title, `metaTitle`, `metaDescription`, keywords, images, and complete section data. After adding a service, verify both `/services` and the generated detail route.
+
+There are currently 12 generated service routes: installation, maintenance, repair, modernization, AMC, spare parts, passenger, hospital, goods, hydraulic, home, and machine-room-less elevators.
 
 ## 7. Environment variables
 
@@ -308,6 +331,8 @@ export const metadata = buildPageMetadata({
 
 The builder automatically handles canonical URLs, merged global keywords, robots, Open Graph, and Twitter metadata.
 
+The SEO library also contains `buildListingMetadata`, `buildBlogMetadata`, and `buildProductMetadata`. These are reusable foundations for future listing, blog, and product routes; the current public route tree does not yet include blog or product pages. Likewise, `app/blog/[slug]/opengraph-image.tsx` is an OG-image foundation, not evidence of a live blog route.
+
 ### 8.4 Dynamic service metadata
 
 `app/services/[slug]/page.tsx` reads `metaTitle`, `metaDescription`, and `keywords` from the matching service in `content/services.json`. The canonical path is based on the service slug.
@@ -356,6 +381,8 @@ Schema rules:
 - Privacy policy
 - Terms and conditions
 - Every service slug from `content/services.json`
+
+The Cookie Policy route is not currently included in the sitemap. Add `/cookie-policy` to the static page list if it should be discoverable through the XML sitemap.
 
 When adding a new standalone route, add it to the static page list. Service routes are included automatically from JSON. Use realistic `changeFrequency` and `priority` values; they are crawler hints, not ranking controls.
 
@@ -462,14 +489,14 @@ npm run build
 
 Then manually verify:
 
-1. Home, About, Services, Contact, and all service detail routes load.
-2. Header, footer, forms, accordions, carousels, and WhatsApp links work.
+1. Home, About, Services, Contact, Cookie Policy, other legal pages, and all service detail routes load.
+2. Header, footer, forms, accordions, carousels, cookie consent controls, and WhatsApp links work.
 3. Layouts work at approximately 320, 375, 768, 1024, and 1440 pixels.
 4. There is no horizontal overflow.
 5. Keyboard focus and carousel controls work.
 6. Images have correct dimensions and alt text.
 7. Page source includes the intended title, description, canonical, and JSON-LD.
-8. `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`, and OG image URLs respond successfully.
+8. `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`, `/llms.txt`, and OG image URLs respond successfully.
 9. Contact email delivery works from the production environment.
 10. No credentials or internal error details appear in client responses.
 
@@ -491,6 +518,7 @@ Recommended external checks:
 - Update metadata when page intent changes.
 - Verify images and alt text.
 - Revalidate the changed path and notify IndexNow where appropriate.
+- When cookie behavior changes, keep the banner, Cookie Policy, and Privacy Policy consistent.
 
 ### Monthly
 
@@ -528,9 +556,12 @@ These items should be reviewed during the next configuration cleanup:
 3. `app/layout.tsx` wraps route content in a `main`, while route pages also render `main`; HTML should contain one primary `main` landmark.
 4. `NEXT_PUBLIC_SITE_URL` falls back to localhost. Production deployment must always define the real HTTPS domain.
 5. Search verification tokens, social URLs, founding date, service area, coordinates, and opening hours in `baseInfo.ts` must be verified business data.
-6. The testimonial copy currently uses generic customer roles. Replace it with verified feedback before representing it as a real customer review.
+6. The two testimonials now identify reviewers and show five-star ratings. Retain evidence that the text, identity, rating, and permission are authentic before presenting them as customer reviews.
 7. Review the custom `/_next/static/*` cache header whenever Next.js is upgraded; Next.js warns that overriding this header can affect framework behavior.
 8. The contact API disables TLS certificate verification and needs production security review.
+9. `/cookie-policy` is not currently included in `app/sitemap.ts` or the footer's legal links, so it is primarily discoverable from the first-visit banner.
+10. Cookie consent currently stores a preference but does not gate optional scripts. The policy mentions analytics and third-party services, so connect future integrations to consent before enabling them.
+11. Cookie-policy contact details are duplicated in `content/cookie.json`; keep them synchronized with `seo-configs/baseInfo.ts` or refactor them to use the shared business source.
 
 ## 14. Deployment checklist
 
@@ -539,6 +570,8 @@ These items should be reviewed during the next configuration cleanup:
 - [ ] Lint and TypeScript checks pass.
 - [ ] Production build completes.
 - [ ] All service slugs generate successfully.
+- [ ] Cookie consent choices persist and any optional scripts respect the stored choice.
+- [ ] Cookie Policy, Privacy Policy, and visible consent wording describe the actual integrations in use.
 - [ ] Metadata and canonical URLs use the production domain.
 - [ ] Structured data validates.
 - [ ] Sitemap and robots files are reachable.
@@ -558,6 +591,8 @@ These items should be reviewed during the next configuration cleanup:
 | Home content | `content/home.json` |
 | About content and team | `content/about.json` |
 | Services and service SEO | `content/services.json` |
+| Cookie banner behavior | `components/common/cookie-banner.tsx` and `app/layout.tsx` |
+| Cookie policy copy | `content/cookie.json` and `app/cookie-policy/page.tsx` |
 | Page layout/order | Matching `app/**/page.tsx` |
 | Section design | `components/section/**` |
 | Global colors and typography | `styles/globals.css` and `lib/fonts.ts` |
@@ -569,4 +604,3 @@ These items should be reviewed during the next configuration cleanup:
 | Images and documents | `public/assets/` |
 
 Keep this guide updated whenever the route structure, environment requirements, content model, or SEO workflow changes.
-
