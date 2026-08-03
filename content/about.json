@@ -17,7 +17,7 @@
         "From the first site inspection to long-term AMC support, Revotek Elevators is with you at every stage of your elevator's lifecycle. We believe reliable vertical mobility is not a luxury it is a necessity, and we treat every project with that responsibility in mind."
       ],
       "assets_bannerImage": {
-        "src": "/assets/aboutbanner2.webp",
+        "src": "/assets/about_01.webp",
         "alt": "Revotek Elevators technician servicing an elevator in Ahmedabad"
       }
     },
@@ -31,6 +31,22 @@
         "heading": "Our Vision",
         "description": "To become the most trusted elevator service company in Gujarat — known for technical excellence, safety standards, and a customer-first approach that sets the benchmark for vertical mobility solutions across India."
       }
+    },
+    "team": {
+      "badgeTitle": "Our Leadership",
+      "heading": "Meet the People Driving Revotek Elevators",
+      "description": "Our leadership team is committed to delivering safe, innovative, and reliable elevator solutions through technical expertise, quality workmanship, and exceptional customer service.",
+      "items": [
+        {
+          "title": "Dilip Varlekar",
+          "specialty": "Founder & CEO",
+          "description": "Dilip Varlekar leads Revotek Elevators with a vision to deliver world-class vertical transportation solutions across Gujarat. With years of industry experience, he focuses on quality, innovation, customer satisfaction, and safety, ensuring every project meets the highest engineering standards.",
+          "image": {
+            "src": "/assets/team/dilip-varlekar.webp",
+            "alt": "Dilip Varlekar - Founder & CEO of Revotek Elevators"
+          }
+        }
+      ]
     },
     "whyChooseUs": {
       "badgeTitle": "Why Choose Us",

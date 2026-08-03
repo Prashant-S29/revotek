@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-
+import CookieBanner from "@/components/common/cookie-banner";
 // seo configs
 import { rootMetadata, rootStructuredData } from "@/seo-configs/metadata";
 import { baseInfo } from "@/seo-configs/baseInfo";
@@ -88,7 +88,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
 
         <Header />
-        <main id="main-content">{children}</main>
+        <main id="main-content">{children}
+          <CookieBanner />
+        </main>
         <Footer />
         <ScrollToTopButton />
       </body>

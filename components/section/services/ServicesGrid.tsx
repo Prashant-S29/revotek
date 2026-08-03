@@ -4,15 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-import { homePageContent } from "@/content/home.json";
 import { servicesPageContent } from "@/content/services.json";
 
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const ServicesGrid: React.FC = () => {
-  const { servicesGrid } = servicesPageContent;
-  const { servicesOverview } = homePageContent;
+  const { servicesGrid, services } = servicesPageContent;
 
   return (
     <section
@@ -45,9 +43,9 @@ export const ServicesGrid: React.FC = () => {
         }}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-100 border"
       >
-        {servicesOverview.services.map((service, index) => (
+        {services.map((service) => (
           <article
-            key={index}
+            key={service.slug}
             className="bg-white flex flex-col overflow-hidden p-6"
           >
             {/* Image */}
@@ -68,13 +66,13 @@ export const ServicesGrid: React.FC = () => {
               </h3>
 
               <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                {service.description}
+                {service.shortDescription}
               </p>
 
               {/* Button */}
               <div>
                 <Link
-                  href={service.cta.href}
+                  href={`/services/${service.slug}`}
                   className={cn(
                     buttonVariants({
                       variant: "default",
@@ -82,9 +80,9 @@ export const ServicesGrid: React.FC = () => {
                     }),
                     "w-fit"
                   )}
-                  aria-label={`${service.cta.label} about ${service.title}`}
+                  aria-label={`Read more about ${service.title}`}
                 >
-                  {service.cta.label}
+                  Read More
                 </Link>
               </div>
             </div>

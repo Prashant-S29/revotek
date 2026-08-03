@@ -12,7 +12,6 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import {
   InstagramIcon,
   Facebook02Icon,
-  NewTwitterIcon,
   WhatsappIcon,
   Mail01Icon,
   Call02Icon,
@@ -45,7 +44,6 @@ const data = {
     facebook: Facebook02Icon,
     instagram: InstagramIcon,
     whatsapp: WhatsappIcon,
-    twitter: NewTwitterIcon,
   },
 };
 
@@ -98,7 +96,9 @@ export const Footer: React.FC = () => {
             </p>
 
             <ul className="flex gap-3">
-              {Object.entries(data.socials).map(([platform, href]) => (
+              {Object.entries(data.socials)
+                .filter(([platform]) => platform !== "twitter")
+                .map(([platform, href]) => (
                 <li key={platform}>
                   <Link
                     href={href}

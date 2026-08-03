@@ -59,44 +59,18 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
 
     // ── Icons ─────────────────────────────────────────────────────────────────
-    // Provide multiple sizes — OS picks the best fit
-    // "purpose: maskable" → icon safe for adaptive icon shapes (Android)
-    // "purpose: any"      → standard icon usage
+    // Only advertise icon files that are present in /public.
     icons: [
       {
-        src: "/icon-96.png",
+        src: "/favicon-96x96.png",
         sizes: "96x96",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icon-192.png",
+        src: "/android-icon-192x192.png",
         sizes: "192x192",
         type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/icon-192.png",
-        sizes: "192x192",
-        type: "image/png",
-        purpose: "maskable",
-      },
-      {
-        src: "/icon-512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/icon-512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "maskable",
-      },
-      {
-        src: "/icon.svg",
-        sizes: "any",
-        type: "image/svg+xml",
         purpose: "any",
       },
     ],

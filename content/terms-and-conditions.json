@@ -1,0 +1,164 @@
+{
+  "termsAndConditionsPageContent": {
+    "seo": {
+      "title": "Terms & Conditions",
+      "description": "Read the Revotek Elevators Terms & Conditions governing website use, quotations, customer responsibilities, services, warranties, and liability.",
+      "keywords": [
+        "Revotek Elevators terms and conditions",
+        "elevator services terms and conditions",
+        "website terms of use",
+        "elevator service agreement India",
+        "Revotek Elevators legal terms"
+      ],
+      "ogImageAlt": "Terms and Conditions | Revotek Elevators"
+    },
+    "hero": {
+      "heading": "Terms & Conditions",
+      "description": "Understand the terms that apply when you access the Revotek Elevators website or use information about our elevator services.",
+      "lastUpdatedLabel": "Last updated",
+      "lastUpdated": "July 30, 2026",
+      "lastUpdatedISO": "2026-07-30"
+    },
+    "introduction": "Welcome to Revotek Elevators. By accessing or using our website, you agree to comply with these Terms & Conditions. If you do not agree, please discontinue using our website.",
+    "sections": [
+      {
+        "id": "acceptance-of-terms",
+        "number": 1,
+        "title": "Acceptance of Terms",
+        "paragraphs": [
+          "By using this website, you confirm that you have read, understood, and agreed to these Terms & Conditions."
+        ]
+      },
+      {
+        "id": "services",
+        "number": 2,
+        "title": "Services",
+        "introduction": "Revotek Elevators provides professional services including:",
+        "items": [
+          "Elevator Installation",
+          "Elevator Modernization",
+          "Elevator Maintenance",
+          "Annual Maintenance Contracts (AMC)",
+          "Elevator Repairs",
+          "Safety Inspections",
+          "Consultation Services"
+        ],
+        "paragraphsAfter": [
+          "Service availability may vary depending on location and project requirements."
+        ]
+      },
+      {
+        "id": "quotations",
+        "number": 3,
+        "title": "Quotations",
+        "paragraphs": [
+          "All quotations provided through the website are estimates only.",
+          "Final pricing may change after site inspection, technical evaluation, or changes requested by the customer."
+        ]
+      },
+      {
+        "id": "customer-responsibilities",
+        "number": 4,
+        "title": "Customer Responsibilities",
+        "introduction": "Customers agree to:",
+        "items": [
+          "Provide accurate project information.",
+          "Ensure safe access to the installation site.",
+          "Obtain necessary government approvals where required.",
+          "Cooperate during inspections and maintenance visits."
+        ]
+      },
+      {
+        "id": "intellectual-property",
+        "number": 5,
+        "title": "Intellectual Property",
+        "paragraphs": [
+          "All content on this website, including text, graphics, logos, icons, images, and design, is the property of Revotek Elevators unless otherwise stated.",
+          "Unauthorized copying, reproduction, or distribution is prohibited."
+        ]
+      },
+      {
+        "id": "website-usage",
+        "number": 6,
+        "title": "Website Usage",
+        "introduction": "Users agree not to:",
+        "items": [
+          "Attempt unauthorized access to our systems.",
+          "Upload malicious software.",
+          "Misuse website forms.",
+          "Submit false or misleading information.",
+          "Interfere with website functionality."
+        ]
+      },
+      {
+        "id": "limitation-of-liability",
+        "number": 7,
+        "title": "Limitation of Liability",
+        "introduction": "Revotek Elevators shall not be liable for:",
+        "items": [
+          "Temporary website downtime",
+          "Technical interruptions",
+          "Loss caused by inaccurate information provided by users",
+          "Indirect or consequential damages arising from website usage"
+        ]
+      },
+      {
+        "id": "warranty",
+        "number": 8,
+        "title": "Warranty",
+        "paragraphs": [
+          "Any warranty applicable to elevator installation or maintenance services will be governed by the individual service agreement or contract signed with the customer."
+        ]
+      },
+      {
+        "id": "third-party-links",
+        "number": 9,
+        "title": "Third-Party Links",
+        "paragraphs": [
+          "Our website may include links to third-party websites. We do not control or endorse their content and are not responsible for their practices."
+        ]
+      },
+      {
+        "id": "privacy",
+        "number": 10,
+        "title": "Privacy",
+        "paragraphs": [
+          "Your use of this website is also governed by our Privacy Policy."
+        ],
+        "cta": {
+          "label": "Read our Privacy Policy",
+          "href": "/privacy-policy"
+        }
+      },
+      {
+        "id": "governing-law",
+        "number": 11,
+        "title": "Governing Law",
+        "paragraphs": [
+          "These Terms & Conditions shall be governed by and interpreted in accordance with the laws of India. Any disputes shall be subject to the jurisdiction of the competent courts where Revotek Elevators operates."
+        ]
+      },
+      {
+        "id": "changes-to-terms",
+        "number": 12,
+        "title": "Changes to Terms",
+        "paragraphs": [
+          "We reserve the right to update these Terms & Conditions at any time without prior notice. Continued use of the website constitutes acceptance of the revised terms."
+        ]
+      },
+      {
+        "id": "contact",
+        "number": 13,
+        "title": "Contact",
+        "paragraphs": [
+          "For any questions regarding these Terms & Conditions or our services, please contact us using the contact information available on our website."
+        ],
+        "cta": {
+          "label": "Contact Revotek Elevators",
+          "href": "/contact"
+        },
+        "highlight": true
+      }
+    ]
+  }
+}

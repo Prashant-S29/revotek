@@ -4,5 +4,6 @@ export * from "./AboutPreview";
 export * from "./ServicesOverview";
 export * from "./IndustriesWeServe";
 export * from "./FAQs";
+export * from "./Testimonials";
 export * from "./ContactBanner";
 export * from "./ContactBanner"

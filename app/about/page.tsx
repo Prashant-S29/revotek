@@ -6,6 +6,7 @@ import {
   CoreValues,
   Hero,
   MissionVision,
+  Team,
   WhoWeAre,
   WhyChooseUs,
 } from "@/components/section/about";
@@ -26,6 +27,9 @@ export const metadata: Metadata = buildPageMetadata({
     "about Revotek Elevators",
     "elevator installation company India",
     "elevator maintenance company Gujarat",
+    "elevator engineers Ahmedabad",
+    "elevator technicians Gujarat",
+    "Revotek Elevators team",
   ],
 });
 
@@ -47,6 +51,7 @@ const About: React.FC = () => {
         <WhoWeAre />
         <MissionVision />
         <WhyChooseUs />
+        <Team />
         <CoreValues />
         <ContactBanner />
       </main>

@@ -20,7 +20,7 @@ export const CoreValues: React.FC = () => {
       }}
     >
       {/* Header */}
-      <div className="mb-14 md:max-w-xl">
+      <div className="mx-auto mb-14 max-w-3xl text-center">
         <p
           aria-hidden="true"
           className="text-md text-primary/70 uppercase tracking-normal font-semibold mb-3"
